@@ -2,6 +2,7 @@
 
 import React from "react";
 import Navbar from "./components/Navbar";
+import styled from "styled-components";
 import {
     BrowserRouter as Router,
     Routes,
@@ -14,27 +15,34 @@ import Projects from "./pages/projects";
 import Team from "./pages/team";
 import Workshops from "./pages/workshops";
 
+export const PageWrapper = styled.nav`
+    margin-top: 90px;
+    ...
+`;
+
 function App() {
     return (
         <Router>
             <Navbar />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route
-                    path="/index"
-                    element={<Home />}
-                />
-                <Route path="/about" element={<About />} />
-                <Route
-                    path="/projects"
-                    element={<Projects />}
-                />
-                <Route path="/team" element={<Team />} />
-                <Route
-                    path="/workshops"
-                    element={<Workshops />}
-                />
-            </Routes>
+                <PageWrapper>
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                        <Route
+                            path="/index"
+                            element={<Home />}
+                        />
+                        <Route path="/about" element={<About />} />
+                        <Route
+                            path="/projects"
+                            element={<Projects />}
+                        />
+                        <Route path="/team" element={<Team />} />
+                        <Route
+                            path="/workshops"
+                            element={<Workshops />}
+                        />
+                    </Routes>
+                </PageWrapper>
         </Router>
     );
 }

@@ -3,16 +3,18 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-    background: #b3edff;
-    width: 200px;
-    height: 100vh;
+    background: #d4d4d4ff;
+    width: 100%;
+    height: 80px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     z-index: 12;
-    padding: 1rem 0;
+    padding: 0 1rem;
+    justify-content: space-between
 `;
 
 export const NavLink = styled(Link)`
@@ -20,13 +22,13 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 1rem 1.5rem;
-    height: auto;
-    width: 100%;
+    padding: 0.5rem 1.5rem;
+    height: 100%;
     cursor: pointer;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 3px solid transparent;
     &.active {
         color: #4d4dff;
+        border-bottom: 3px solid #4d4dff;
     }
     &:hover {
         background: rgba(0,0,0,0.05);
@@ -49,7 +51,16 @@ export const Bars = styled(FaBars)`
 
 export const NavMenu = styled.div`
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
     margin-right: 0;
+`;
+
+export const Logo = styled.img`
+    width: 200px;
+    height: 80px;
+`;
+
+export const Space = styled.div`
+    width: 200px;
+    height: 80px;
 `;

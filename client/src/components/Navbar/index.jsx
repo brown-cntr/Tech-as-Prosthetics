@@ -1,10 +1,13 @@
 import React from "react";
-import { Nav, NavLink, NavMenu } from "./NavbarElements";
+import { Nav, NavLink, NavMenu, Logo, Space } from "./NavbarElements";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from "../../assets/logo-with-name.png";
 
 const Navbar = () => {
     return (
         <>
             <Nav>
+                <Logo src={logo} alt="Logo" />
                 <NavMenu>
                     <NavLink to="/index" activeStyle>
                         HomePage
@@ -22,6 +25,7 @@ const Navbar = () => {
                         Workshops
                     </NavLink>
                 </NavMenu>
+                <Space></Space>
             </Nav>
         </>
     );
