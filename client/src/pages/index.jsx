@@ -7,6 +7,8 @@ import cat1 from "../assets/cat1.png";
 import cat2 from "../assets/cat2.png";
 import cat3 from "../assets/cat3.png";
 import cat4 from "../assets/cat4.png";
+import cat5 from "../assets/cat5.png";
+
 
 
 const digitalworkshops = [
@@ -37,6 +39,13 @@ const digitalworkshops = [
     alt: "img4",
     description: "OMG Workshop",
     className: "grid-four",
+  },
+    {
+    to: "workshops/cat4",
+    imgSrc: cat4,
+    alt: "img5",
+    description: "workiworkshop",
+    className: "grid-five",
   },
 ];
 const Home = () => {

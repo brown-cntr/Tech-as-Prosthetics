@@ -35,7 +35,9 @@ export const Container = styled.div`
 export const GridContainer = styled.div`
     display: grid;
     height: 50rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 33%;
+    grid-auto-flow: column;
+    overflow-x: scroll;
     gap: 1.3rem;
     margin-top: 1.3rem;
 `;
