@@ -3,6 +3,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import styled from "styled-components";
+import Footer from "./components/Footer.jsx";
 import {
     BrowserRouter as Router,
     Routes,
@@ -43,6 +44,7 @@ function App() {
                         />
                     </Routes>
                 </PageWrapper>
+            <Footer />
         </Router>
     );
 }
