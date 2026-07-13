@@ -58,9 +58,10 @@ export const ProjectsArea = styled.div`
 export const ProjectsPart = styled.div`
     display: flex; 
     min-height: 17.5%;
+    win-width: 75%;
     background-color: #E6E3DA;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 5vw;
+    margin-right: 1vw;
 `;
 
 export const ProjectsPartTitle = styled.div`
@@ -68,11 +69,14 @@ export const ProjectsPartTitle = styled.div`
     width: 40%;
 `;
 
+export const HomePageTitles = styled.div`
+    width: 40vw;
+`;
+
 export const ProjectsSquare = styled.div`
     width: 20vh;
     height: 20vh;
     background-color: #c4c0b5;
-
 `;
 
 export const ProjectsCircle = styled.div`
@@ -80,7 +84,7 @@ export const ProjectsCircle = styled.div`
     height: 20vh;
     border-radius: 50%;
     background-color: #c4c0b5;
-    margin-left: 10%;  
+    margin-left: 15vw;  
     margin-right: 2%;  
 `;
 
@@ -97,7 +101,8 @@ export const ViewAllProjectsButton = styled.button`
     padding-right: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
-    margin: 0 auto;
+    margin-left: 20vw;
+    margin-right: 2%;
     color: white;
     background-color: #E6E3DA;
     color: #7B6C55;
@@ -116,9 +121,10 @@ export const ViewAllProjectsButton = styled.button`
 export const DigitalWorkshopsArea = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
-
 `;
+
 
 export const DigitalWorkshopTitle = styled.div`
     text-align: center;
@@ -127,10 +133,9 @@ export const DigitalWorkshopTitle = styled.div`
 `;
 
 export const DigitalWorkshopExplanation = styled.div`
-    margin-top: 20px;
     text-align: left;
-    margin-left: 200px;
-    max-width: 800px;
+    min-width: 20vh;
+    margin-right: 5%;
 `;
 
 export const Container = styled.div`

@@ -13,6 +13,7 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea, DigitalWorkshopTi
     ProjectsPart,
     ProjectsDecorative,
     ProjectsPartTitle,
+    HomePageTitles,
     ProjectsCircle,
     ProjectsSquare} from "./homepagecomponents";
 import cat1 from "../assets/cat1.png";
@@ -106,10 +107,10 @@ const Home = () => {
                     </ProjectsDecorative>
                     <div> 
                         <ProjectsPart>
-                                <ProjectsPartTitle>
+                                <HomePageTitles style={{ textAlign: "left" }}>
                                     <h1>Projects</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
-                                </ProjectsPartTitle>
+                                </HomePageTitles>
                                 <ViewAllProjectsButton>View All Projects</ViewAllProjectsButton>
                         </ProjectsPart>
                         <ProjectsPart>
@@ -120,7 +121,7 @@ const Home = () => {
                                 </ProjectsPartTitle>
                         </ProjectsPart>
                         <ProjectsPart>
-                                <ProjectsPartTitle style={{ textAlign: "right", marginRight: "1rem", marginLeft: "19rem" }}>
+                                <ProjectsPartTitle style={{ textAlign: "right", marginRight: "1rem", marginLeft: "28vw" }}>
                                     <h2>Project Title</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </ProjectsPartTitle>
@@ -138,27 +139,30 @@ const Home = () => {
 
             <FadeSection>
             <DigitalWorkshopsArea>
-                <div>
-                    <ProjectsPartTitle style={{ marginLeft: "3rem" }}>
+                <div style={{ minWidth: "50%"}}>
+                    <HomePageTitles style={{ marginLeft: "3rem",  textAlign: "left" }}>
                         <h1>Projects</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
-                    </ProjectsPartTitle>
+                    </HomePageTitles>
                     <img src={booksVector} alt="Stack of books" />
                 </div>
                 <DigitalWorkshopExplanation>
-                    <p>(1) How have contributions to foundational technologies by women, nonbinary people, and disabled individuals been systematically obscured? </p>
-                    <p> (2) What mechanisms have facilitated these erasures, and how might we reverse them? </p>
-                    <p> (3) What interdisciplinary methodologies and practices (from gender studies, critical disability studies, science and technology studies, computer science, and the digital humanities, among other areas) might best support the translation of these histories for audiences within and beyond academic spaces?</p>
+                    <hr />
+                    <p>How have contributions to foundational technologies by women, nonbinary people, and disabled individuals been systematically obscured? </p>
+                    <hr />
+                    <p>What mechanisms have facilitated these erasures, and how might we reverse them? </p>
+                    <hr />
+                    <p> What interdisciplinary methodologies and practices (from gender studies, critical disability studies, science and technology studies, computer science, and the digital humanities, among other areas) might best support the translation of these histories for audiences within and beyond academic spaces?</p>
                 </DigitalWorkshopExplanation>
             </DigitalWorkshopsArea>
             </FadeSection>
             <FadeSection>
-            <DigitalWorkshopTitle>
-                    <h1 style={{ fontWeight: "bold" }}>Contact Us</h1>
-            </DigitalWorkshopTitle>
-            <DigitalWorkshopsArea>
-
-            </DigitalWorkshopsArea>
+                <DigitalWorkshopsArea >
+                    <HomePageTitles>
+                            <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </HomePageTitles>
+                </DigitalWorkshopsArea>
             </FadeSection>
         </div>
     );
