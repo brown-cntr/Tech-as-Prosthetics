@@ -4,12 +4,23 @@ import mainimg from "../assets/placeholder.png";
 import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea, DigitalWorkshopTitle, HomeContainer, Container, GridContainer,
     Card, CardDescription, CardImage, 
     DigitalWorkshopExplanation, HrTrimmed,
-    FadeSection} from "./homepagecomponents";
+    FadeSection,
+    MainTitleArea,
+    MainImageArea,
+    ProjectsArea,
+    LearnMoreButton,
+    ViewAllProjectsButton,
+    ProjectsPart,
+    ProjectsDecorative,
+    ProjectsPartTitle,
+    ProjectsCircle,
+    ProjectsSquare} from "./homepagecomponents";
 import cat1 from "../assets/cat1.png";
 import cat2 from "../assets/cat2.png";
 import cat3 from "../assets/cat3.png";
 import cat4 from "../assets/cat4.png";
 import cat5 from "../assets/cat5.png";
+import booksVector from "../assets/books-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const digitalworkshops = [
@@ -75,42 +86,65 @@ const Home = () => {
                 >
                 <FadeSection>
                 <MainArea>
-                    <MainTitle>Technologies as Prosthetics</MainTitle>
-                    <MainImage src={mainimg} alt="MainImage" />
+                    <MainImageArea>
+                        <MainImage src={mainimg} alt="MainImage" />
+                        <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
+                        <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button">
+                        Learn More
+                        </LearnMoreButton>
+                    </MainImageArea>
+                    <MainTitleArea>
+                        <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>
+                        <MainTitle>Technologies and/as Prosthetics</MainTitle>
+                    </MainTitleArea>
                 </MainArea>
                 </FadeSection>
             </motion.div>
             <FadeSection>
-            <DigitalWorkshopsArea>
-                <DigitalWorkshopTitle>
-                    <h1 style={{ fontWeight: "bold" }}>Digital Workshops</h1>
-                    <p>Explore our experiences below</p>
-                </DigitalWorkshopTitle>
-                <HomeContainer>
-                    <Container>
-                        <GridContainer ref={gridRef}>
-                            {digitalworkshops.map((workshop) => (
-                                <Card key={workshop.to}>
-                                    <CardImage src={workshop.imgSrc} alt={workshop.alt} />
-                                    <CardDescription>{workshop.description}</CardDescription>
-                                </Card>
-                                ))}
-                        </GridContainer>
-                        <button onClick={() => handleGrid('left')}>Previous</button>
-                        <button onClick={() => handleGrid('right')}>Next</button>
-                    </Container>
-                </HomeContainer>
-            </DigitalWorkshopsArea>
+                <ProjectsArea>
+                    <ProjectsDecorative>
+                    </ProjectsDecorative>
+                    <div> 
+                        <ProjectsPart>
+                                <ProjectsPartTitle>
+                                    <h1>Projects</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                                </ProjectsPartTitle>
+                                <ViewAllProjectsButton>View All Projects</ViewAllProjectsButton>
+                        </ProjectsPart>
+                        <ProjectsPart>
+                            <ProjectsCircle></ProjectsCircle>
+                                <ProjectsPartTitle>
+                                    <h2>Project Title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </ProjectsPartTitle>
+                        </ProjectsPart>
+                        <ProjectsPart>
+                                <ProjectsPartTitle style={{ textAlign: "right", marginRight: "1rem", marginLeft: "19rem" }}>
+                                    <h2>Project Title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </ProjectsPartTitle>
+                                <ProjectsSquare></ProjectsSquare>
+                        </ProjectsPart>
+                        <ProjectsPart>
+                                <ProjectsPartTitle>
+                                    <h2>Project Title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </ProjectsPartTitle>    
+                        </ProjectsPart>                      
+                    </div>
+                </ProjectsArea>
             </FadeSection>
-                            <div style={{ marginTop: "2rem", marginBottom: "2rem" }}> 
-                    <HrTrimmed />
-                </div>
+
             <FadeSection>
             <DigitalWorkshopsArea>
-                <DigitalWorkshopTitle>
-                    <h1 style={{ fontWeight: "bold" }}>Exploring Our Workshops</h1>
-                    <h6 style={{ fontWeight: "bold", textAlign: "left", marginLeft: "5rem" }}>Our workshops aim to uncover the relationship between disability and the development of technology. Each workshop is centered around 3 key questions:</h6>
-                </DigitalWorkshopTitle>
+                <div>
+                    <ProjectsPartTitle style={{ marginLeft: "3rem" }}>
+                        <h1>Projects</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                    </ProjectsPartTitle>
+                    <img src={booksVector} alt="Stack of books" />
+                </div>
                 <DigitalWorkshopExplanation>
                     <p>(1) How have contributions to foundational technologies by women, nonbinary people, and disabled individuals been systematically obscured? </p>
                     <p> (2) What mechanisms have facilitated these erasures, and how might we reverse them? </p>
@@ -118,9 +152,6 @@ const Home = () => {
                 </DigitalWorkshopExplanation>
             </DigitalWorkshopsArea>
             </FadeSection>
-            <div style={{ marginTop: "2rem", marginBottom: "2rem" }}> 
-                    <HrTrimmed />
-            </div>
             <FadeSection>
             <DigitalWorkshopTitle>
                     <h1 style={{ fontWeight: "bold" }}>Contact Us</h1>

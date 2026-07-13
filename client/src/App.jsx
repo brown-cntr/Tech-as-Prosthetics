@@ -17,8 +17,7 @@ import Team from "./pages/team";
 import Workshops from "./pages/workshops";
 
 export const PageWrapper = styled.nav`
-    margin-top: 90px;
-    ...
+
 `;
 
 function App() {

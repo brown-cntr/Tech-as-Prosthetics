@@ -5,27 +5,121 @@ import { useRef } from "react";
 export const MainArea = styled.div`
     display: flex;
     min-height: 100vh;
-    align-items: center;
+    padding-top: 10%;
+    box-sizing: border-box;
 `;
 
+export const MainTitleArea = styled.div`
+    max-width: 25%;
+    margin-right: 20%;
+    margin-left: 5%;
+`;
 export const MainTitle = styled.h1`
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 500;
     text-align: left;
     max-width: 600px;
     line-height: 1.1;
-    margin-left: 30px;
+`;
+export const MainImageArea = styled.div`
+    max-width: 35%;
+    align-items: left;
+    margin-left: 15%;
 `;
 export const MainImage = styled.img`
-    max-width: 600px;
+    width: 100%;
+    height: 60%;
 `;
 
+export const LearnMoreButton = styled.button`
+    padding: clamp(6px, 1vw, 12px) clamp(24px, 4vw, 48px);
+    color: white;
+    background-color: #b09cc4;
+    border: none;
+    border-radius: 8px;
+    width: 66.666%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    &:active {
+        background-color: #8f7aa8;
+        transform: scale(0.97);
+    }
+`;
+
+export const ProjectsArea = styled.div`
+    display: flex; 
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 0.5%;
+    background-color: #E6E3DA;
+`;
+
+export const ProjectsPart = styled.div`
+    display: flex; 
+    min-height: 17.5%;
+    background-color: #E6E3DA;
+    margin-left: 5%;
+    margin-right: 5%;
+`;
+
+export const ProjectsPartTitle = styled.div`
+    text-align: left;
+    width: 40%;
+`;
+
+export const ProjectsSquare = styled.div`
+    width: 20vh;
+    height: 20vh;
+    background-color: #c4c0b5;
+
+`;
+
+export const ProjectsCircle = styled.div`
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    background-color: #c4c0b5;
+    margin-left: 10%;  
+    margin-right: 2%;  
+`;
+
+export const ProjectsDecorative = styled.div`
+    display: flex; 
+    align-items: center;
+    min-height: 70vh;
+    min-width: 25%;
+    background-color: #C4C0B5;
+`;
+
+export const ViewAllProjectsButton = styled.button`
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: 0 auto;
+    color: white;
+    background-color: #E6E3DA;
+    color: #7B6C55;
+    align-self: center;  
+    border: 5px solid #7B6C55;
+    border-radius: 20px;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    &:active {
+        transform: scale(0.97);
+    }
+`;
+
+
 export const DigitalWorkshopsArea = styled.div`
-    display: flex
+    display: flex;
     align-items: center;
     min-height: 100vh;
 
 `;
+
 export const DigitalWorkshopTitle = styled.div`
     text-align: center;
     margin-left: 10 auto; 
