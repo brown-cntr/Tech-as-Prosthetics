@@ -22,6 +22,7 @@ import cat3 from "../assets/cat3.png";
 import cat4 from "../assets/cat4.png";
 import cat5 from "../assets/cat5.png";
 import booksVector from "../assets/books-vector.svg";
+import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import largeCircle from "../assets/large-circle.svg";
 import ellipseShape from "../assets/ellipse.svg";
@@ -176,7 +177,25 @@ const Home = () => {
                         <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
                         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                     </HomePageTitles>
-                    <img src={ellipseShape} alt="" style={{ width: "150px" }} />
+                    <img 
+                    src={ellipseShape} 
+                    alt="" 
+                    style={{ position: "absolute", right: "10vw", top: "50%", transform: "translateY(-50%)", width: "15vw" }} 
+                    />
+                </DigitalWorkshopsArea>
+            </FadeSection>
+            <FadeSection>
+                <DigitalWorkshopsArea>
+                    <div>                    
+                        <img src={barsVector} alt="books" />
+                    </div>
+                    <HomePageTitles style={{ marginLeft: "3rem" }}>
+                        <h1>Our Team</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto" }}>
+                        Meet the Team
+                        </LearnMoreButton>
+                    </HomePageTitles>
                 </DigitalWorkshopsArea>
             </FadeSection>
         </div>
