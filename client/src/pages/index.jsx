@@ -26,6 +26,7 @@ import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import largeCircle from "../assets/large-circle.svg";
 import ellipseShape from "../assets/ellipse.svg";
+import { useNavigate } from "react-router-dom";
 
 const digitalworkshops = [
   {
@@ -67,6 +68,7 @@ const digitalworkshops = [
 
 
 const Home = () => {
+        const navigate = useNavigate();
         const gridRef = useRef();
         const handleGrid = (direction) => {
         if (direction === 'left') {
@@ -93,7 +95,8 @@ const Home = () => {
                     <MainImageArea>
                         <MainImage src={mainimg} alt="MainImage" />
                         <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
-                        <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button">
+                        <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
+                        onClick={() => navigate("/about")}>
                         Learn More
                         </LearnMoreButton>
                     </MainImageArea>
@@ -114,7 +117,7 @@ const Home = () => {
                                     <h1>Projects</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
                                 </HomePageTitles>
-                                <ViewAllProjectsButton>View All Projects</ViewAllProjectsButton>
+                                <ViewAllProjectsButton onClick={() => navigate("/projects")}>View All Projects</ViewAllProjectsButton>
                         </ProjectsPart>
                         <ProjectsPart>
                             <ProjectsCircle></ProjectsCircle>
@@ -190,7 +193,8 @@ const Home = () => {
                     <HomePageTitles style={{ marginLeft: "3rem" }}>
                         <h1>Our Team</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto" }}>
+                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto" }}
+                        onClick={() => navigate("/team")}>
                         Meet the Team
                         </LearnMoreButton>
                     </HomePageTitles>

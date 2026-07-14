@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
     background: #F2F0E9;
     width: 100%;
-    height: 80px;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: right;
