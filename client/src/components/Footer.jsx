@@ -12,7 +12,7 @@ export const Logo = styled.img`
 
 export const Box = styled.div`
     padding: 5% 2.5%;
-    background: #f1f1f1ff;
+    background: #E6E3DA;
     // position: absolute;
     bottom: 0;
     width: 100%;
