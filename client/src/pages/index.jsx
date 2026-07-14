@@ -23,6 +23,8 @@ import cat4 from "../assets/cat4.png";
 import cat5 from "../assets/cat5.png";
 import booksVector from "../assets/books-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
+import largeCircle from "../assets/large-circle.svg";
+import ellipseShape from "../assets/ellipse.svg";
 
 const digitalworkshops = [
   {
@@ -157,11 +159,24 @@ const Home = () => {
             </DigitalWorkshopsArea>
             </FadeSection>
             <FadeSection>
-                <DigitalWorkshopsArea >
-                    <HomePageTitles>
-                            <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <DigitalWorkshopsArea>
+                        <img 
+                        src={largeCircle} 
+                        alt="" 
+                        style={{ position: "absolute", left: "-25vw", top: "50%", transform: "translateY(-50%)", width: "55vw" }} 
+                        />
+                    <HomePageTitles style={{ 
+                    position: "absolute", 
+                    left: "50%", 
+                    top: "50%", 
+                    transform: "translate(-50%, -50%)", 
+                    maxWidth: "35%", 
+                    textAlign: "center" 
+                    }}>
+                        <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                     </HomePageTitles>
+                    <img src={ellipseShape} alt="" style={{ width: "150px" }} />
                 </DigitalWorkshopsArea>
             </FadeSection>
         </div>

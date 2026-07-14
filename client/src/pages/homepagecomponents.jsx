@@ -123,8 +123,8 @@ export const DigitalWorkshopsArea = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
 `;
-
 
 export const DigitalWorkshopTitle = styled.div`
     text-align: center;
