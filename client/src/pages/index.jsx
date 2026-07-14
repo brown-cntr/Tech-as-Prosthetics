@@ -186,9 +186,7 @@ const Home = () => {
             </FadeSection>
             <FadeSection>
                 <DigitalWorkshopsArea>
-                    <div>                    
-                        <img src={barsVector} alt="books" />
-                    </div>
+                    <img src={barsVector} alt="books" style={{width: "20vw"}}/>                    
                     <HomePageTitles style={{ marginLeft: "3rem" }}>
                         <h1>Our Team</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
