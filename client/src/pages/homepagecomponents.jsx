@@ -195,7 +195,7 @@ export const HrTrimmed = styled.hr`
 
 
 export const FadeSection = ({ children }) => {
-  const ref = useRef(null);
+const ref = useRef(null);
 const { scrollYProgress } = useScroll({
   target: ref,
   offset: ["start end", "start start", "end end", "end start"],
