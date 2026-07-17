@@ -1,86 +1,73 @@
-import styled from "styled-components";
 import { Sheet } from 'react-modal-sheet';
 import { useState, useRef } from 'react';
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import handle from "../assets/sheet-handle-bump.svg";
+import cat1 from "../assets/cat1.png";
+import cat2 from "../assets/cat2.png";
+import cat3 from "../assets/cat3.png";
+import cat4 from "../assets/cat4.png";
+import cat5 from "../assets/cat5.png";
+import {
+    Card,
+    CardDescription,
+    CardImage,
+    ProjectTitle,
+    ProjectsSquare,
+    ProjectsGallery,
+    SheetHeader,
+    SheetContainer,
+    SheetContent,
+    GridContainer,
+    Gallery,
+} from "./projectscomponents";
+import { HandleButton } from './Projectscomponents';
+import arrowUp from "../assets/up-arrow-icon.svg";
 
-
-export const ProjectTitle = styled.div`
-    margin-top: 20vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-`;
-
-const RawProjectsSquare = styled(motion.div)`
-    width: 20vh;
-    height: 20vh;
-    background-color: #c4c0b5;
-    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
-`;
-
-export const ProjectsSquare = (props) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const { $duration, $delay, style, ...rest } = props;
-
-    return (
-        <div
-            style={{ position: "absolute", width: "20vh", height: "20vh", ...style }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            {...rest}
-        >
-            <RawProjectsSquare
-                animate={
-                    isHovered
-                        ? { scale: 1.1, x: 0, y: 0 }
-                        : { scale: 1, x: [0, 6, -4, -8, 0], y: [0, -10, -14, -6, 0] }
-                }
-                transition={
-                    isHovered
-                        ? { duration: 0.15 }
-                        : {
-                            scale: { duration: 0.2 },
-                            x: { duration: $duration || 3, delay: $delay || 0, repeat: Infinity, ease: "easeInOut" },
-                            y: { duration: $duration || 3, delay: $delay || 0, repeat: Infinity, ease: "easeInOut" },
-                          }
-                }
-            />
-        </div>
-    );
-};
-
-export const ProjectsGallery = styled.div`
-    position: relative;
-    padding-top: 5vh;
-    width: 100%;
-    height: 200vh;
-`;
-
-const SheetHeader = styled(Sheet.Header)`
-  background: transparent !important;
-`;
-
-const SheetContainer = styled(Sheet.Container)`
-  background: transparent !important;
-  box-shadow: none !important;
-`;
-
-const SheetContent = styled(Sheet.Content)`
-  background: transparent !important;
-`;
-
-const SheetBackdrop = styled(Sheet.Backdrop)`
-    margin-top: 5vh;
-    background-color: #c4c0b5!important;
-`;
+const allProjects = [
+  {
+    to: "workshops/cat1",
+    imgSrc: cat1,
+    alt: "img1",
+    description: "Great Project",
+    className: "grid-one",
+  },
+  {
+    to: "workshops/cat2",
+    imgSrc: cat2,
+    alt: "img2",
+    description: "Amazing Project",
+    className: "grid-two",
+  },
+  {
+    to: "workshops/cat3",
+    imgSrc: cat3,
+    alt: "img3",
+    description: "SuperDuper Project",
+    className: "grid-three",
+  },
+  {
+    to: "workshops/cat4",
+    imgSrc: cat4,
+    alt: "img4",
+    description: "OMG Project",
+    className: "grid-four",
+  },
+    {
+    to: "workshops/cat4",
+    imgSrc: cat5,
+    alt: "img5",
+    description: "ProjiProject",
+    className: "grid-five",
+  },
+];
 
 const snapPoints = [0, 0.1, 0.5, 0.9];
 
 //the website visual is here
 const Projects = () => {
+
+    const gridRef = useRef();
+
     const [isOpen, setOpen] = useState(false);
     const [hasBeenDismissed, setHasBeenDismissed] = useState(false);
     const sheetRef = useRef(null);
@@ -137,22 +124,43 @@ return (
       >
         <SheetContainer>
                 <SheetHeader unstyled>
-                <img 
-                    src={handle} 
-                    alt="handle" 
-                    draggable={false}
-                    style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
-                />
+                    <img 
+                        src={handle} 
+                        alt="handle" 
+                        draggable={false}
+                        style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
+                    >                
+                        <HandleButton>
+                            <img 
+                                src={arrowUp} 
+                                alt="arrow" 
+                                draggable={false}
+                                style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
+                            />         
+                        </HandleButton>  
+                    </img>
+                    <div style={{ height: "5vh", background: "#9E9A90" }} >
+                        
+                    </div>
                 </SheetHeader>
                 <SheetContent>
-                    <button onClick={() => {
-                            snapTo(0);
-                            setHasBeenDismissed(true);
-                        }}>Snap to index 0</button>
-                    <button onClick={() => snapTo(1)}>Snap to index 1</button>
-                    <button onClick={() => snapTo(2)}>Snap to index 2</button>
+                    <Gallery>
+                        <button onClick={() => {
+                                snapTo(0);
+                                setHasBeenDismissed(true);
+                            }}>Snap to index 0</button>
+                        <button onClick={() => snapTo(1)}>Snap to index 1</button>
+                        <button onClick={() => snapTo(2)}>Snap to index 2</button>
+                        <GridContainer ref={gridRef}>
+                            {allProjects.map((project) => (
+                                <Card key={project.to}>
+                                    <CardImage src={project.imgSrc} alt={project.alt} />
+                                    <CardDescription>{project.description}</CardDescription>
+                                </Card>
+                                ))}
+                        </GridContainer>
+                    </Gallery>
                 </SheetContent>
-            <SheetBackdrop />
         </SheetContainer>
       </Sheet>
     </div>
