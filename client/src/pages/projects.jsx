@@ -20,65 +20,81 @@ import {
     GridContainer,
     Gallery,
 } from "./projectscomponents";
-import { HandleButton } from './Projectscomponents';
+import { HandleButton } from './projectscomponents';
 import arrowUp from "../assets/up-arrow-icon.svg";
+import { CardTitle } from './projectscomponents';
 
 const allProjects = [
   {
     to: "workshops/cat1",
     imgSrc: cat1,
     alt: "img1",
-    description: "Great Project",
+    title: "Great Project",
+    description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-one",
   },
   {
     to: "workshops/cat2",
     imgSrc: cat2,
     alt: "img2",
-    description: "Amazing Project",
+    title: "Amazing Project",
+    description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-two",
   },
   {
     to: "workshops/cat3",
     imgSrc: cat3,
     alt: "img3",
-    description: "SuperDuper Project",
+    title: "SuperDuper Project",
+    description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-three",
   },
   {
     to: "workshops/cat4",
     imgSrc: cat4,
     alt: "img4",
-    description: "OMG Project",
+    title: "OMG Project",
+    description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-four",
   },
     {
     to: "workshops/cat4",
     imgSrc: cat5,
     alt: "img5",
-    description: "ProjiProject",
+    title: "ProjiProject",
+    description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-five",
   },
 ];
 
 const snapPoints = [0, 0.1, 0.5, 0.9];
 
+
 //the website visual is here
 const Projects = () => {
 
     const gridRef = useRef();
-
     const [isOpen, setOpen] = useState(false);
     const [hasBeenDismissed, setHasBeenDismissed] = useState(false);
     const sheetRef = useRef(null);
     const snapTo = (i) => sheetRef.current?.snapTo(i);
     const { scrollYProgress } = useScroll();
+    const[isFlipped, setIsFlipped] = useState(false);
+    const clickedButton = () => {
+        if (!isFlipped){
+             snapTo(3);
+        } 
+        else{
+            snapTo(1); 
+        } 
+        setIsFlipped(!isFlipped)
+    };
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (hasBeenDismissed) return;
         if (latest > 0.3) {
             setOpen(true);
-            if(latest>0.6){
+            if(latest>0.4){
                 snapTo(2);
             }
         } else {
@@ -129,32 +145,31 @@ return (
                         alt="handle" 
                         draggable={false}
                         style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
-                    >                
-                        <HandleButton>
-                            <img 
+                    />               
+                    <HandleButton onClick={() => clickedButton()}>
+                        <img 
                                 src={arrowUp} 
                                 alt="arrow" 
                                 draggable={false}
-                                style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
-                            />         
-                        </HandleButton>  
-                    </img>
-                    <div style={{ height: "5vh", background: "#9E9A90" }} >
-                        
+                                style={{ 
+                                    height: "3vh", 
+                                    display: "block", 
+                                    pointerEvents: "none",
+                                    transform: isFlipped ? "rotate(180deg)" : "rotate(0deg)",
+                                    transition: "transform 0.3s ease"
+                                }} 
+                            />                 
+                    </HandleButton>  
+                    <div style={{ height: "5vh", background: "#9E9A90" }} >           
                     </div>
                 </SheetHeader>
                 <SheetContent>
                     <Gallery>
-                        <button onClick={() => {
-                                snapTo(0);
-                                setHasBeenDismissed(true);
-                            }}>Snap to index 0</button>
-                        <button onClick={() => snapTo(1)}>Snap to index 1</button>
-                        <button onClick={() => snapTo(2)}>Snap to index 2</button>
                         <GridContainer ref={gridRef}>
                             {allProjects.map((project) => (
                                 <Card key={project.to}>
                                     <CardImage src={project.imgSrc} alt={project.alt} />
+                                    <CardTitle>{project.title}</CardTitle>
                                     <CardDescription>{project.description}</CardDescription>
                                 </Card>
                                 ))}

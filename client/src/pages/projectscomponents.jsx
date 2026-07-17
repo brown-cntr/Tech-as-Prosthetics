@@ -15,16 +15,27 @@ export const Card = styled.div`
   }
 `;
 
+export const CardTitle = styled.h6`
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin-top: 1vh;
+    margin-left: 1vw;
+`;
+
 export const CardDescription = styled.p`
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
+    margin-top: 1vh;
+    margin-left: 1vw;
 `;
 
 export const CardImage = styled.img`
     width: 100%;
-    height: 70%;
+    height: 65%;
     object-fit: cover;
     object-position: 50% 50%;
 `;
@@ -85,6 +96,7 @@ export const ProjectsGallery = styled.div`
 
 export const SheetHeader = styled(Sheet.Header)`
   background: transparent !important;
+  position: relative;
 `;
 
 export const SheetContainer = styled(Sheet.Container)`
@@ -116,4 +128,8 @@ export const HandleButton = styled.button`
     border: 0;
     background: none;
     box-shadow: none;
+    position: absolute;
+    top: 15%;
+    left: 21%;
+    transform: translate(-15%, -21%);
 `;
