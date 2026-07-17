@@ -16,26 +16,27 @@ export const Card = styled.div`
 `;
 
 export const CardTitle = styled.h6`
-    height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    margin-top: 1vh;
-    margin-left: 1vw;
+    font-weight: bold;
+`;
+
+export const CardDescArea = styled.div`
+    display: flex;
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw; 
 `;
 
 export const CardDescription = styled.p`
-    height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    margin-top: 1vh;
-    margin-left: 1vw;
+    font-size: 0.7rem;
 `;
 
 export const CardImage = styled.img`
     width: 100%;
-    height: 65%;
+    height: 60%;
     object-fit: cover;
     object-position: 50% 50%;
 `;
@@ -109,7 +110,7 @@ export const SheetContent = styled(Sheet.Content)`
 `;
 
 export const GridContainer = styled.div`
-    width: 55vw;
+    width: 60vw;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     row-gap: 5vh;
@@ -132,4 +133,22 @@ export const HandleButton = styled.button`
     top: 15%;
     left: 21%;
     transform: translate(-15%, -21%);
+`;
+
+
+export const LearnMoreButton = styled.button`
+    align-self: center;
+    margin-left: 0.3vw;
+    color: white;
+    background-color: #b09cc4;
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    &:active {
+        background-color: #8f7aa8;
+        transform: scale(0.97);
+    }
 `;

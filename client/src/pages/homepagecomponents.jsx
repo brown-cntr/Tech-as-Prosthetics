@@ -32,7 +32,6 @@ export const MainImage = styled.img`
 `;
 
 export const LearnMoreButton = styled.button`
-    padding: clamp(6px, 1vw, 12px) clamp(24px, 4vw, 48px);
     color: white;
     background-color: #b09cc4;
     border: none;
@@ -159,31 +158,7 @@ export const HomeContainer = styled.div`
     padding-top: 0.5rem;
 `;
 
-export const Card = styled.div`
-    background: #b2b2b2ff;
-    height: 250px;
-    width: 250px;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-    &:hover {
-    transform: scale(1.1);
-    z-index: 10;
-  }
-`;
 
-export const CardDescription = styled.p`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-`;
-
-export const CardImage = styled.img`
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    object-position: 50% 50%;
-`;
 
 export const HrTrimmed = styled.hr`
     max-width: 80%;

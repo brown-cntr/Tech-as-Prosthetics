@@ -23,6 +23,8 @@ import {
 import { HandleButton } from './projectscomponents';
 import arrowUp from "../assets/up-arrow-icon.svg";
 import { CardTitle } from './projectscomponents';
+import { LearnMoreButton } from './projectscomponents';
+import { CardDescArea } from './Projectscomponents';
 
 const allProjects = [
   {
@@ -169,8 +171,11 @@ return (
                             {allProjects.map((project) => (
                                 <Card key={project.to}>
                                     <CardImage src={project.imgSrc} alt={project.alt} />
-                                    <CardTitle>{project.title}</CardTitle>
-                                    <CardDescription>{project.description}</CardDescription>
+                                    <CardDescArea>
+                                        <CardTitle>{project.title}</CardTitle>
+                                        <CardDescription>{project.description}</CardDescription>
+                                        <LearnMoreButton>Learn More</LearnMoreButton>
+                                    </CardDescArea>
                                 </Card>
                                 ))}
                         </GridContainer>
