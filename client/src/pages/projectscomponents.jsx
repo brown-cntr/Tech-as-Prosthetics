@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const Card = styled.div`
     background: #FAF9F7;
-    height: 45vh;
+    min-height: 45vh;
     width: 100%;
     overflow: hidden;
     transition: transform 0.2s ease;
@@ -23,6 +23,7 @@ export const CardTitle = styled.h6`
 
 export const CardDescArea = styled.div`
     display: flex;
+    flex-direction: column;
     padding-top: 1vh;
     padding-left: 1vw;
     padding-right: 1vw; 
