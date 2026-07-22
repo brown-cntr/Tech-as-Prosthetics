@@ -23,6 +23,7 @@ export const PageWrapper = styled.nav`
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Navbar />
                 <PageWrapper>
                     <Routes>
