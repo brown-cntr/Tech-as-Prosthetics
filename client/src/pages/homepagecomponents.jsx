@@ -5,14 +5,15 @@ import { useRef } from "react";
 export const MainArea = styled.div`
     display: flex;
     min-height: 100vh;
-    padding-top: 10%;
+    padding-top: 5%;
     box-sizing: border-box;
 `;
 
 export const MainTitleArea = styled.div`
     max-width: 25%;
     margin-right: 20%;
-    margin-left: 5%;
+    padding-top: 5%;
+    margin-left: -7vw;
 `;
 export const MainTitle = styled.h1`
     font-size: 4rem;
@@ -22,13 +23,13 @@ export const MainTitle = styled.h1`
     line-height: 1.1;
 `;
 export const MainImageArea = styled.div`
-    max-width: 60%;
+    max-width: 80%;
     align-items: left;
 `;
 export const MainImage = styled.img`
-    width: 60%;
-    height: 60%;
+    width: 100%;
     align-items: left;
+    margin-bottom: -25vh;
 `;
 
 export const LearnMoreButton = styled.button`
