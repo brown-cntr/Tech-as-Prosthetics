@@ -15,7 +15,7 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     HomePageTitles,
     ProjectsCircle,
     ProjectsSquare} from "./homepagecomponents";
-import left-lady from "../assets/left-lady-home.svg";
+import leftLady from "../assets/left-lady-home.svg";
 import booksVector from "../assets/books-vector.svg";
 import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -50,12 +50,14 @@ const Home = () => {
                 <FadeSection>
                 <MainArea>
                     <MainImageArea>
-                        <MainImage src={mainimg} alt="MainImage" />
-                        <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
-                        <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
-                        onClick={() => navigate("/about")}>
-                        Learn More
-                        </LearnMoreButton>
+                        <MainImage src={leftLady} alt="MainImage" />
+                        <div style={{ marginLeft: "15vw" }}  >
+                            <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
+                            <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
+                            onClick={() => navigate("/about")}>
+                            Learn More
+                            </LearnMoreButton>
+                        </div>
                     </MainImageArea>
                     <MainTitleArea>
                         <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>

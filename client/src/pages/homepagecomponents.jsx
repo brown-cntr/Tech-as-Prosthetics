@@ -22,13 +22,13 @@ export const MainTitle = styled.h1`
     line-height: 1.1;
 `;
 export const MainImageArea = styled.div`
-    max-width: 35%;
+    max-width: 60%;
     align-items: left;
-    margin-left: 15%;
 `;
 export const MainImage = styled.img`
-    width: 100%;
+    width: 60%;
     height: 60%;
+    align-items: left;
 `;
 
 export const LearnMoreButton = styled.button`
