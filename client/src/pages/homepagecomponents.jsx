@@ -7,6 +7,7 @@ export const MainArea = styled.div`
     min-height: 100vh;
     padding-top: 5%;
     box-sizing: border-box;
+    position: relative;
 `;
 
 export const MainTitleArea = styled.div`
@@ -16,10 +17,9 @@ export const MainTitleArea = styled.div`
     margin-left: -7vw;
 `;
 export const MainTitle = styled.h1`
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 500;
     text-align: left;
-    max-width: 600px;
     line-height: 1.1;
 `;
 export const MainImageArea = styled.div`
@@ -29,7 +29,7 @@ export const MainImageArea = styled.div`
 export const MainImage = styled.img`
     width: 100%;
     align-items: left;
-    margin-bottom: -25vh;
+    margin-bottom: -30vh;
 `;
 
 export const LearnMoreButton = styled.button`

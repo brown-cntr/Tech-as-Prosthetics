@@ -17,7 +17,7 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     ProjectsSquare} from "./homepagecomponents";
 import leftLady from "../assets/left-lady-home.svg";
 import mainPeople from "../assets/people_top_drawing.svg"
-import rightPeople from "../assets/characters-bottom-right";
+import rightPeople from "../assets/characters-bottom-right.svg";
 import booksVector from "../assets/books-vector.svg";
 import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -52,7 +52,7 @@ const Home = () => {
                 <FadeSection>
                 <MainArea>
                     <MainImageArea>
-                        <MainImage src={mainPeople} alt="MainImage" />
+                        <MainImage src={mainPeople} alt="decorative image" />
                         <div style={{ marginLeft: "15vw", width: "60%" }}  >
                             <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
                             <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
@@ -62,8 +62,15 @@ const Home = () => {
                         </div>
                     </MainImageArea>
                     <MainTitleArea>
-                        <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>
-                        <MainTitle>Technologies and/as Prosthetics</MainTitle>
+                        <div style={{ width: "100%" }}>
+                            <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>
+                            <MainTitle>Technologies and/as Prosthetics</MainTitle>
+                        </div>
+                        <img src={rightPeople} alt="decorative image 2" 
+                        style={{ 
+                            position: "absolute",
+                            right: "0%",
+                            top: "38%" }} />
                     </MainTitleArea>
                 </MainArea>
                 </FadeSection>
