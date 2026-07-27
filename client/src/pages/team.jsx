@@ -5,7 +5,7 @@ import React from "react";
 const Team = () => {
     return (
         <div>
-            <h1>Team</h1>
+            <h2>Team</h2>
         </div>
     );
 };

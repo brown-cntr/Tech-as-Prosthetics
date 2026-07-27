@@ -174,7 +174,7 @@ return (
                                     <CardDescArea>
                                         <CardTitle>{project.title}</CardTitle>
                                         <CardDescription>{project.description}</CardDescription>
-                                        <LearnMoreButton>Learn More</LearnMoreButton>
+                                        <LearnMoreButton as="a" href='khipu.jsx'>Learn More</LearnMoreButton>
                                     </CardDescArea>
                                 </Card>
                                 ))}

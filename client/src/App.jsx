@@ -14,6 +14,7 @@ import HomePage from "./pages/index";
 import Projects from "./pages/projects";
 import Team from "./pages/team";
 import ScrollToTop from "./components/ScrollToTop";
+import Khipu from "./workshops/khipu";
 
 export const PageWrapper = styled.nav`
 
@@ -23,6 +24,7 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
+            
             <Navbar />
                 <PageWrapper>
                     <Routes>
