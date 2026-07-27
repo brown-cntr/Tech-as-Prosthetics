@@ -2,11 +2,6 @@ import { Sheet } from 'react-modal-sheet';
 import { useState, useRef } from 'react';
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import handle from "../assets/sheet-handle-bump.svg";
-import cat1 from "../assets/cat1.png";
-import cat2 from "../assets/cat2.png";
-import cat3 from "../assets/cat3.png";
-import cat4 from "../assets/cat4.png";
-import cat5 from "../assets/cat5.png";
 import {
     Card,
     CardDescription,
@@ -25,11 +20,12 @@ import arrowUp from "../assets/up-arrow-icon.svg";
 import { CardTitle } from './projectscomponents';
 import { LearnMoreButton } from './projectscomponents';
 import { CardDescArea } from './Projectscomponents';
+import placeholderImage from "../assets/CNTR_logo_color.png";
 
 const allProjects = [
   {
     to: "workshops/cat1",
-    imgSrc: cat1,
+    imgSrc: placeholderImage,
     alt: "img1",
     title: "Great Project",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
@@ -37,7 +33,7 @@ const allProjects = [
   },
   {
     to: "workshops/cat2",
-    imgSrc: cat2,
+    imgSrc: placeholderImage,
     alt: "img2",
     title: "Amazing Project",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
@@ -45,7 +41,7 @@ const allProjects = [
   },
   {
     to: "workshops/cat3",
-    imgSrc: cat3,
+    imgSrc: placeholderImage,
     alt: "img3",
     title: "SuperDuper Project",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
@@ -53,15 +49,15 @@ const allProjects = [
   },
   {
     to: "workshops/cat4",
-    imgSrc: cat4,
+    imgSrc: placeholderImage,
     alt: "img4",
     title: "OMG Project",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-four",
   },
-    {
-    to: "workshops/cat4",
-    imgSrc: cat5,
+  {
+    to: "workshops/cat5",
+    imgSrc: placeholderImage,
     alt: "img5",
     title: "ProjiProject",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
