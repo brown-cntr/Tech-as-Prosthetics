@@ -50,18 +50,18 @@ export const LearnMoreButton = styled.button`
 export const ProjectsArea = styled.div`
     display: flex; 
     align-items: center;
-    min-height: 100vh;
+    min-height: 120vh;
     padding-top: 0.5%;
-    background-color: #E6E3DA;
+    background-color: #E4D9B5;
 `;
 
 export const ProjectsPart = styled.div`
     display: flex; 
-    min-height: 17.5%;
-    win-width: 75%;
-    background-color: #E6E3DA;
+    height: 20vh;
+    background-color: #E4D9B5;
     margin-left: 5vw;
     margin-right: 1vw;
+    padding-bottom: 3vh;
 `;
 
 export const ProjectsPartTitle = styled.div`
@@ -91,9 +91,7 @@ export const ProjectsCircle = styled.div`
 export const ProjectsDecorative = styled.div`
     display: flex; 
     align-items: center;
-    min-height: 70vh;
-    min-width: 25%;
-    background-color: #C4C0B5;
+    width: 40%;
 `;
 
 export const ViewAllProjectsButton = styled.button`
@@ -101,7 +99,7 @@ export const ViewAllProjectsButton = styled.button`
     padding-right: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
-    margin-left: 20vw;
+    margin-left: 9vw;
     margin-right: 2%;
     color: white;
     background-color: #E6E3DA;
