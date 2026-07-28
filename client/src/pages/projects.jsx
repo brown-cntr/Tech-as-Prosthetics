@@ -27,7 +27,7 @@ const allProjects = [
     to: "workshops/cat1",
     imgSrc: placeholderImage,
     alt: "img1",
-    title: "Great Project",
+    title: "Incan Khipu",
     description: "loremipsum porjsdkjnfksd jkasdnffsj hdsfaj",
     className: "grid-one",
   },
@@ -170,7 +170,10 @@ return (
                                     <CardDescArea>
                                         <CardTitle>{project.title}</CardTitle>
                                         <CardDescription>{project.description}</CardDescription>
-                                        <LearnMoreButton as="a" href='khipu.jsx'>Learn More</LearnMoreButton>
+                                        <LearnMoreButton title="Learn More" 
+                                        style={{ margin: "0 auto" }}
+                                        onClick={() => navigate("/khipu")}>
+                                         Learn More</LearnMoreButton>
                                     </CardDescArea>
                                 </Card>
                                 ))}
