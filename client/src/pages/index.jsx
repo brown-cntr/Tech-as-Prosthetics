@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styled from "styled-components";
-import mainimg from "../assets/placeholder.png";
 import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     DigitalWorkshopExplanation,
     FadeSection,
@@ -24,6 +23,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import largeCircle from "../assets/large-circle.svg";
 import ellipseShape from "../assets/ellipse.svg";
 import { useNavigate } from "react-router-dom";
+import path from "../assets/Path.svg"
+import oldComputer from "../assets/First Computer bkg.svg"
 
 
 const Home = () => {
@@ -44,12 +45,18 @@ const Home = () => {
             }
     return (
         <div>
+            <FadeSection>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 >
-                <FadeSection>
+                <img src={path} alt="path image" 
+                        style={{ 
+                            position: "absolute",
+                            right: "0%",
+                            top: "75%",
+                            zIndex: 0 }} />
                 <MainArea>
                     <MainImageArea>
                         <MainImage src={mainPeople} alt="decorative image" />
@@ -73,11 +80,11 @@ const Home = () => {
                             top: "38%" }} />
                     </MainTitleArea>
                 </MainArea>
-                </FadeSection>
             </motion.div>
-            <FadeSection>
-                <ProjectsArea>
+                <ProjectsArea style={{ marginTop: "13vh" }}>
                     <ProjectsDecorative>
+                        <img src={oldComputer} alt="old computer" 
+                        style={{ height: "95vh" }} />
                     </ProjectsDecorative>
                     <div> 
                         <ProjectsPart>
@@ -110,7 +117,6 @@ const Home = () => {
                     </div>
                 </ProjectsArea>
             </FadeSection>
-
             <FadeSection>
             <DigitalWorkshopsArea>
                 <div style={{ minWidth: "50%"}}>

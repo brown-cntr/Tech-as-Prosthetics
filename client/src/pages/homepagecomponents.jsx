@@ -52,14 +52,14 @@ export const ProjectsArea = styled.div`
     align-items: center;
     min-height: 100vh;
     padding-top: 0.5%;
-    background-color: #E6E3DA;
+    background-color: #E4D9B5;
 `;
 
 export const ProjectsPart = styled.div`
     display: flex; 
     min-height: 17.5%;
     win-width: 75%;
-    background-color: #E6E3DA;
+    background-color: #E4D9B5;
     margin-left: 5vw;
     margin-right: 1vw;
 `;
@@ -91,9 +91,8 @@ export const ProjectsCircle = styled.div`
 export const ProjectsDecorative = styled.div`
     display: flex; 
     align-items: center;
-    min-height: 70vh;
-    min-width: 25%;
-    background-color: #C4C0B5;
+    min-height: 50vh;
+    width: 50%;
 `;
 
 export const ViewAllProjectsButton = styled.button`
