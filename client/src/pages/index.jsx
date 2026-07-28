@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from "styled-components";
-import mainimg from "../assets/placeholder.png";
+import mainimg from "../assets/CNTR_logo_color.png";
 import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     DigitalWorkshopExplanation,
     FadeSection,

@@ -14,7 +14,7 @@ export const Nav = styled.nav`
     left: 0;
     z-index: 12;
     padding: 0 1rem;
-    justify-content: space-between
+    justify-content: space-between;
 `;
 
 export const NavLink = styled(Link)`
@@ -27,8 +27,8 @@ export const NavLink = styled(Link)`
     cursor: pointer;
     border-bottom: 3px solid transparent;
     &.active {
-        color: #4d4dff;
-        border-bottom: 3px solid #4d4dff;
+        color: #b6a3c0;
+        border-bottom: 3px solid #b6a3c0;
     }
     &:hover {
         background: rgba(0,0,0,0.05);
