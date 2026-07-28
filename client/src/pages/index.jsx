@@ -17,7 +17,7 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
 import leftLady from "../assets/left-lady-home.svg";
 import mainPeople from "../assets/people_top_drawing.svg"
 import rightPeople from "../assets/characters-bottom-right.svg";
-import booksVector from "../assets/books-vector.svg";
+import booksVector from "../assets/books.svg";
 import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import largeCircle from "../assets/large-circle.svg";
@@ -25,6 +25,8 @@ import ellipseShape from "../assets/ellipse.svg";
 import { useNavigate } from "react-router-dom";
 import path from "../assets/Path.svg"
 import oldComputer from "../assets/First Computer bkg.svg"
+import ropes from "../assets/ropes.svg"
+import typeWriter from "../assets/Typewriter 1.svg"
 
 
 const Home = () => {
@@ -81,19 +83,24 @@ const Home = () => {
                     </MainTitleArea>
                 </MainArea>
             </motion.div>
-                <ProjectsArea style={{ marginTop: "13vh" }}>
+                <ProjectsArea style={{ marginTop: "5vh" }}>
                     <ProjectsDecorative>
                         <img src={oldComputer} alt="old computer" 
-                        style={{ height: "95vh" }} />
+                        style={{ height: "100vh" }} />
                     </ProjectsDecorative>
                     <div> 
                         <ProjectsPart>
                                 <HomePageTitles style={{ textAlign: "left" }}>
-                                    <h1>Projects</h1>
+                                    <h1>Experiences</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
                                 </HomePageTitles>
-                                <ViewAllProjectsButton onClick={() => navigate("/projects")}>View All Projects</ViewAllProjectsButton>
                         </ProjectsPart>
+                        <div style={{ marginLeft: "5vw", marginBottom: "2vh", paddingBottom: "3vh" }}>
+                            <LearnMoreButton title="View All Projects" style={{ height: "10vh", width: "20vw" }}
+                                onClick={() => navigate("/projects")}>
+                                View All Projects
+                            </LearnMoreButton>
+                        </div>
                         <ProjectsPart>
                             <ProjectsCircle></ProjectsCircle>
                                 <ProjectsPartTitle>
@@ -124,7 +131,7 @@ const Home = () => {
                         <h1>Projects</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
                     </HomePageTitles>
-                    <img src={booksVector} alt="Stack of books" />
+                    <img src={booksVector} alt="Stack of books" style={{ position: "absolute",  left: "0%" }}/>
                 </div>
                 <DigitalWorkshopExplanation>
                     <hr />
