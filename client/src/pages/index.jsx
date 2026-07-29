@@ -23,10 +23,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import largeCircle from "../assets/large-circle.svg";
 import ellipseShape from "../assets/ellipse.svg";
 import { useNavigate } from "react-router-dom";
-import path from "../assets/Path.svg"
-import oldComputer from "../assets/First Computer bkg.svg"
-import ropes from "../assets/ropes.svg"
-import typeWriter from "../assets/Typewriter 1.svg"
+import path from "../assets/Path.svg";
+import oldComputer from "../assets/First Computer bkg.svg";
+import ropes from "../assets/ropes.svg";
+import typeWriter from "../assets/Typewriter 1.svg";
+import bigLeftLady from "../assets/Face-illustration.svg";
+import bigRightLady from "../assets/LadyRight.svg";
+import purpleHill from "../assets/purple-hill.svg";
+import fig7 from "../assets/Fig 7.svg";
+import fig12 from "../assets/Fig 12.svg";
+import fig13 from "../assets/Fig 13.svg";
+import fig15 from "../assets/Fig 15.svg";
+import fig19_1 from "../assets/Fig 19-1.svg";
+import fig19_2 from "../assets/Fig 19-2.svg";
+import fig19 from "../assets/Fig 19.svg";
 
 
 const Home = () => {
@@ -102,7 +112,7 @@ const Home = () => {
                             </LearnMoreButton>
                         </div>
                         <ProjectsPart>
-                            <ProjectsCircle></ProjectsCircle>
+                            <img src={ropes}/>
                                 <ProjectsPartTitle>
                                     <h2>Project Title</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -113,7 +123,7 @@ const Home = () => {
                                     <h2>Project Title</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </ProjectsPartTitle>
-                                <ProjectsSquare></ProjectsSquare>
+                                <img src={typeWriter}/>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle>
@@ -128,10 +138,10 @@ const Home = () => {
             <DigitalWorkshopsArea>
                 <div style={{ minWidth: "50%"}}>
                     <HomePageTitles style={{ marginLeft: "3rem",  textAlign: "left" }}>
-                        <h1>Projects</h1>
+                        <h1>Our Mission</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
                     </HomePageTitles>
-                    <img src={booksVector} alt="Stack of books" style={{ position: "absolute",  left: "0%" }}/>
+                    <img src={booksVector} alt="Stack of books" style={{ marginLeft: "-2.5vw"}}/>
                 </div>
                 <DigitalWorkshopExplanation>
                     <hr />
@@ -146,9 +156,9 @@ const Home = () => {
             <FadeSection>
                 <DigitalWorkshopsArea>
                         <img 
-                        src={largeCircle} 
+                        src={bigLeftLady} 
                         alt="" 
-                        style={{ position: "absolute", left: "-25vw", top: "50%", transform: "translateY(-50%)", width: "55vw" }} 
+                        style={{ }} 
                         />
                     <HomePageTitles style={{ 
                     position: "absolute", 
@@ -162,23 +172,27 @@ const Home = () => {
                         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                     </HomePageTitles>
                     <img 
-                    src={ellipseShape} 
-                    alt="" 
-                    style={{ position: "absolute", right: "10vw", top: "50%", transform: "translateY(-50%)", width: "15vw" }} 
+                    src={bigRightLady} 
+                    alt="lady on the right" 
+                    style={{ marginLeft: "34vw" }} 
                     />
                 </DigitalWorkshopsArea>
-            </FadeSection>
-            <FadeSection>
-                <DigitalWorkshopsArea>
-                    <img src={barsVector} alt="books" style={{width: "20vw"}}/>                    
-                    <HomePageTitles style={{ marginLeft: "3rem" }}>
+                <DigitalWorkshopsArea style={{marginTop: "2vh", marginBottom: "14vh"}}>
+                    <img src={purpleHill} alt="purple hill" style={{width: "100vw", position: "absolute"}}/>  
+                    <img src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
+                    <img src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
+                    <img src={fig15} alt="fig15" style={{right: "5vw", top: "40vh", position: "absolute"}}/>
+                    <img src={fig7} alt="fig7" style={{left: "16vw", top: "4vh", position: "absolute"}}/>
+                    <img src={fig19_2} alt="fig19_2" style={{left: "28vw", top: "15vh", position: "absolute"}}/>
+                    <img src={fig19} alt="fig19" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
+                    <div style={{width: "30vw", position: "absolute", color: "white", marginLeft: "40vw"}}>
                         <h1>Our Team</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto" }}
+                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto", background: "#E4D9B5", color: "black", height: "10vh"  }}
                         onClick={() => navigate("/team")}>
                         Meet the Team
                         </LearnMoreButton>
-                    </HomePageTitles>
+                    </div>  
                 </DigitalWorkshopsArea>
             </FadeSection>
         </div>
