@@ -11,10 +11,11 @@ import {
 } from "react-router-dom";
 import Home from "./pages";
 import HomePage from "./pages/index";
-import Projects from "./pages/projects";
+import Projects from "./pages/projects.jsx";
 import Team from "./pages/team";
+import Khipu from "./pages/khipu";
 import ScrollToTop from "./components/ScrollToTop";
-import Khipu from "./workshops/khipu";
+
 
 export const PageWrapper = styled.nav`
 
@@ -24,7 +25,6 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
-            
             <Navbar />
                 <PageWrapper>
                     <Routes>
@@ -33,11 +33,12 @@ function App() {
                             path="/index"
                             element={<Home />}
                         />
-                        <Route
-                            path="/projects"
-                            element={<Projects />}
-                        />
+
+                        <Route path="/projects" element={<Projects />} />
+                        
                         <Route path="/team" element={<Team />} />
+                        <Route path="/khipu" element={<Khipu />} />
+                      
                     </Routes>
                 </PageWrapper>
             <Footer />

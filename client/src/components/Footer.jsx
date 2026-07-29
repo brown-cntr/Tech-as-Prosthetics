@@ -105,7 +105,7 @@ const Footer = () => {
                             <FooterLink href="#">
                                 QWERTY Keyboard
                             </FooterLink>
-                            <FooterLink href="khipu.jsx">
+                            <FooterLink href="/techasprosthetics.io/projects/khipu">
                                 Incan Khipu
                             </FooterLink>
                         </Column>
