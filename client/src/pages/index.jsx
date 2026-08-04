@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styled from "styled-components";
-import mainimg from "../assets/placeholder.png";
 import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     DigitalWorkshopExplanation,
     FadeSection,

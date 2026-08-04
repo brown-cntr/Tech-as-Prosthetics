@@ -1,5 +1,3 @@
-// Filename - pages/signup.js
-
 import React from "react";
 import {
     GridContainer,
@@ -10,6 +8,8 @@ import {
     TopRightText,
     Card,
     CardText,
+    OtherTopText,
+    Header,
 } from "./teamcomponents";
 import placeholderImg from "../assets/CNTR_logo_color.png";
 import kimImg from "../assets/profilepics/kim.png";
@@ -55,22 +55,29 @@ const teamMembers = [
 
  ];
 
-//     imgSrc: placeholderImg;
-// ]
 
 const Team = () => {
     return (
     <>
+        <Header>
         <TopText>
             <TopLeftText> 
-                Our Team 
+                Our Team <br/>
             </TopLeftText>
 
             <TopRightText>
                 The People Behind the Scenes 
             </TopRightText>
-
         </TopText>
+
+        <OtherTopText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+            eiusmod tempor incididunt ut <br/> labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            <br/> nisi ut aliquip ex ea commodo consequat.
+        </OtherTopText>
+
+        </Header>
 
         <GridContainer>
             {teamMembers.map((member) => (

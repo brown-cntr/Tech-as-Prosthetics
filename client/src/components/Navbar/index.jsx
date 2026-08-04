@@ -1,17 +1,16 @@
 import React from "react";
-import { Nav, NavLink, NavMenu, Logo, Space } from "./NavbarElements";
+import { Nav, NavLink, NavMenu, NavImgLink} from "./NavbarElements";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "../../assets/logo-with-name.png";
+import logo from "../../assets/image.png";
 
 const Navbar = () => {
     return (
         <>
             <Nav>
-                <Logo src={logo} alt="Logo" />
+                 <NavImgLink to="/index" activeStyle>
+                        <img src= {logo}/>
+                    </NavImgLink>
                 <NavMenu>
-                    <NavLink to="/index" activeStyle>
-                        HomePage
-                    </NavLink>
                     <NavLink to="/projects" activeStyle>
                         Projects
                     </NavLink>
@@ -19,7 +18,6 @@ const Navbar = () => {
                         Team
                     </NavLink>
                 </NavMenu>
-                <Space></Space>
             </Nav>
         </>
     );
