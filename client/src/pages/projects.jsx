@@ -2,6 +2,7 @@ import { Sheet } from 'react-modal-sheet';
 import { useState, useRef } from 'react';
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import handle from "../assets/sheet-handle-bump.svg";
+import { useNavigate } from 'react-router-dom';
 import {
     Card,
     CardDescription,
@@ -70,7 +71,7 @@ const snapPoints = [0, 0.1, 0.5, 0.9];
 
 //the website visual is here
 const Projects = () => {
-
+    const navigate = useNavigate();
     const gridRef = useRef();
     const [isOpen, setOpen] = useState(false);
     const [hasBeenDismissed, setHasBeenDismissed] = useState(false);
