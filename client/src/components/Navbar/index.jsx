@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav, NavLink, NavMenu, NavImgLink} from "./NavbarElements";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "../../assets/image.png";
+import logo from "../../assets/projectLogo.png";
 
 const Navbar = () => {
     return (
