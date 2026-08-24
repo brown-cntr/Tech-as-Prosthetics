@@ -2,19 +2,17 @@
 
 import React from "react";
 // components/FooterStyles.js
-import logo from "../assets/CNTR_logo_color.png";
+import logo from "../assets/projectLogo.png";
 import styled from "styled-components";
 
 export const Logo = styled.img`
-    width: 5%;
-    height: 5%;
+    width: 10%;
+    height: 10%;
 `;
 
 export const Box = styled.div`
     padding: 5% 2.5%;
-    background: #E6E3DA;
-    // position: absolute;
-    bottom: 0;
+    background: #E4D9B5;
     width: 100%;
 
     @media (max-width: 1000px) {
@@ -28,7 +26,6 @@ export const FooterContainer = styled.div`
     justify-content: space-between;
     max-width: 1000px;
     margin: 0 auto;
-    /* background: red; */
 `;
 
 
@@ -36,7 +33,6 @@ export const FooterSpacer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 `;
 
 export const Column = styled.div`
@@ -63,9 +59,9 @@ export const Row = styled.div`
 `;
 
 export const FooterLink = styled.a`
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #515151ff;
+    margin-bottom: 5%;
+    font-size: 80%;
+    color: #000000;
     text-decoration: none;
     &:hover {
         color: white;
@@ -74,7 +70,7 @@ export const FooterLink = styled.a`
 `;
 
 export const Heading = styled.p`
-    font-size: 24px;
+    font-size: 90%;
     background: #d4drgba(38, 38, 38, 1)
     margin-bottom: 40px;
     font-weight: bold;
@@ -97,32 +93,35 @@ const Footer = () => {
                     <FooterSpacer>
                     <Logo src={logo} alt="MainImage" />
                     <Row>
+                         <Column>
+                         <Heading>Contact us</Heading>
+                            <FooterLink href="#">
+                                Email:<br />
+                                email@brown.edu
+                            </FooterLink>
+                        </Column>
                         <Column>
-                            <Heading>Modules</Heading>
-                            <FooterLink href="#">
-                                Analytical Engine
-                            </FooterLink>
-                            <FooterLink href="#">
-                                QWERTY Keyboard
-                            </FooterLink>
+                            <Heading>Experiences</Heading>
                             <FooterLink href="/techasprosthetics.io/projects/khipu">
-                                Incan Khipu
+                                The Incan Khipu
+                            </FooterLink>
+                            <FooterLink href="#">
+                                Ada Lovelace's Analytical Engine
+                            </FooterLink>
+                            <FooterLink href="#">
+                               The QWERTY Keyboard
                             </FooterLink>
                         </Column>
                         <Column>
                             <Heading>Quicklinks</Heading>
                             <FooterLink href="#">
-                                About
-                            </FooterLink>
-                        </Column>
-                        <Column>
-                            <Heading>FeedBack</Heading>
-                            <FooterLink href="#">
-                                Contact<br />
-                                cntr-tap@brown.edu
+                                Home
                             </FooterLink>
                             <FooterLink href="#">
-                                Report a bug
+                                Experiences
+                            </FooterLink>
+                            <FooterLink href="#">
+                                Teams
                             </FooterLink>
                         </Column>
                     </Row>

@@ -11,48 +11,68 @@ import {
     OtherTopText,
     Header,
 } from "./teamcomponents";
-import placeholderImg from "../assets/CNTR_logo_color.png";
+import teamBottomImg from "../assets/teamBottomImg.png";
 import kimImg from "../assets/profilepics/kim.png";
+import kimCartoon from "../assets/profilepics/kimCartoon.png";
+
 import saryaImg from "../assets/profilepics/sarya.png";
+import saryaCartoon from "../assets/profilepics/saryaCartoon.png";
+
 import meredithImg from "../assets/profilepics/meredith.png";
+import meredithCartoon from "../assets/profilepics/meredithCartoon.png";
+
+import tjImg from "../assets/profilepics/tj.png";
+import tjCartoon from "../assets/profilepics/tjCartoon.png";
+
+import kateImg from "../assets/profilepics/kate.png";
+import kateCartoon from "../assets/profilepics/kateCartoon.png";
+
+import kellieImg from "../assets/profilepics/kellie.png";
+import kellieCartoon from "../assets/profilepics/kellieCartoon.png"
 
 const teamMembers = [
     {
-        profilePic: meredithImg,
-        name: "Meredith Mendola",
-        title: "CNTR Program Manager, CNTR AISLE Product Director, SRCH Advisor"
-    },
-
-    {
         profilePic: kimImg,
+        cartoonPic: kimCartoon,
         name: "Kim Fernandes",
         title: "Assistant Professor of Anthropology"
     },
 
     {
-        profilePic: placeholderImg,
+        profilePic: meredithImg,
+        cartoonPic: meredithCartoon,
+        name: "Meredith Mendola",
+        title: "CNTR Program Manager, Project Lead"
+    },
+
+    {
+        profilePic: tjImg,
+        cartoonPic: tjCartoon,
         name: "TJ Kalaitzidis",
         title: "Assistant Director, Learning Systems Innovation"
     },
 
-    {
-        profilePic: placeholderImg,
-        name: "Kate Zhang",
-        title: "Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead"
+     {
+        profilePic: kellieImg,
+        cartoonPic: kellieCartoon,
+        name: "Kellie Louis",
+        title: "Undergraduate Student in Computer Science and History, Development & Design Assistant"
     },
+
 
     {
         profilePic: saryaImg,
+        cartoonPic: saryaCartoon,
         name: "Sarya Baran Kiliç",
         title: "Undergraduate Student in Computer Science and Comparative Literature, Developer Lead"
     },
 
     {
-        profilePic: placeholderImg,
-        name: "Kellie Louis",
-        title: "Undergraduate Student in Computer Science and History, Development & Design Assistant"
-    }
-
+        profilePic: kateImg,
+        cartoonPic: kateCartoon,
+        name: "Kate Zhang",
+        title: "Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead"
+    },
  ];
 
 
@@ -66,7 +86,7 @@ const Team = () => {
             </TopLeftText>
 
             <TopRightText>
-                The People Behind the Scenes 
+                The People Behind <br/>the Scenes 
             </TopRightText>
         </TopText>
 

@@ -21,16 +21,12 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)`
     color: #000000;
     display: flex;
-    flex-direction: row;
     text-decoration: none;
     padding: 0.5rem 1.5rem;
     height: 100%;
     cursor: pointer;
     &.active {
         color: #b6a3c0;
-    }
-    &:hover {
-        background: rgba(0,0,0,0.05);
     }
 `;
 
