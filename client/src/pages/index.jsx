@@ -14,14 +14,10 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     HomePageTitles,
     ProjectsCircle,
     ProjectsSquare} from "./homepagecomponents";
-import leftLady from "../assets/left-lady-home.svg";
 import mainPeople from "../assets/people_top_drawing.svg"
 import rightPeople from "../assets/characters-bottom-right.svg";
 import booksVector from "../assets/books.svg";
-import barsVector from "../assets/bars-vector.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
-import largeCircle from "../assets/large-circle.svg";
-import ellipseShape from "../assets/ellipse.svg";
 import { useNavigate } from "react-router-dom";
 import path from "../assets/Path.svg";
 import oldComputer from "../assets/First Computer bkg.svg";
@@ -29,7 +25,7 @@ import ropes from "../assets/ropes.webp";
 import typewriter from "../assets/Typewriter 1.webp";
 import bigLeftLady from "../assets/Face-illustration.webp";
 import bigRightLady from "../assets/realRightLady.svg";
-import purpleHill from "../assets/purple-hill.webp";
+import purpleHill from "../assets/hillpurp.webp";
 import fig7 from "../assets/Fig 7.svg";
 import fig12 from "../assets/Fig 12.svg";
 import fig13 from "../assets/Fig 13.svg";
@@ -161,14 +157,15 @@ const Home = () => {
                         style={{ 
                     position: "absolute", 
                     left: "-50%", 
+                    marginTop: "50%", 
                     }} 
                         />
                     <HomePageTitles style={{ 
                     position: "absolute", 
                     left: "50%", 
-                    top: "50%", 
+                    top: "90%", 
                     transform: "translate(-50%, -50%)", 
-                    maxWidth: "35%", 
+                    maxWidth: "30%", 
                     textAlign: "center" 
                     }}>
                         <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
@@ -177,12 +174,14 @@ const Home = () => {
                     <img 
                     src={bigRightLady} 
                     alt="lady on the right" 
-                    style={{ marginLeft: "70vw" ,
-
+                    style={{                     
+                        position: "absolute", 
+                        marginLeft: "70vw",
+                        top: "35%"
                     }} 
                     />
                 </DigitalWorkshopsArea>
-                <DigitalWorkshopsArea style={{marginTop: "2vh", marginBottom: "14vh"}}>
+                <DigitalWorkshopsArea style={{marginTop: "90vh", marginBottom: "14vh"}}>
                     <img src={purpleHill} alt="purple hill" style={{width: "100vw", position: "absolute"}}/>  
                     <img src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
                     <img src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
