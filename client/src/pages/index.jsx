@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styled from "styled-components";
-import mainimg from "../assets/placeholder.png";
 import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     DigitalWorkshopExplanation,
     FadeSection,
@@ -26,11 +25,11 @@ import ellipseShape from "../assets/ellipse.svg";
 import { useNavigate } from "react-router-dom";
 import path from "../assets/Path.svg";
 import oldComputer from "../assets/First Computer bkg.svg";
-import ropes from "../assets/ropes.svg";
-import typeWriter from "../assets/Typewriter 1.svg";
-import bigLeftLady from "../assets/Face-illustration.svg";
-import bigRightLady from "../assets/LadyRight.svg";
-import purpleHill from "../assets/purple-hill.svg";
+import ropes from "../assets/ropes.webp";
+import typewriter from "../assets/Typewriter 1.webp";
+import bigLeftLady from "../assets/Face-illustration.webp";
+import bigRightLady from "../assets/LadyRight.webp";
+import purpleHill from "../assets/purple-hill.webp";
 import fig7 from "../assets/Fig 7.svg";
 import fig12 from "../assets/Fig 12.svg";
 import fig13 from "../assets/Fig 13.svg";
@@ -124,7 +123,7 @@ const Home = () => {
                                     <h2>Project Title</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </ProjectsPartTitle>
-                                <img src={typeWriter}/>
+                                <img src={typewriter}/>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle>
