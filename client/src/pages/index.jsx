@@ -28,7 +28,7 @@ import oldComputer from "../assets/First Computer bkg.svg";
 import ropes from "../assets/ropes.webp";
 import typewriter from "../assets/Typewriter 1.webp";
 import bigLeftLady from "../assets/Face-illustration.webp";
-import bigRightLady from "../assets/LadyRight.webp";
+import bigRightLady from "../assets/rightLadyFinal.png";
 import purpleHill from "../assets/purple-hill.webp";
 import fig7 from "../assets/Fig 7.svg";
 import fig12 from "../assets/Fig 12.svg";
@@ -158,7 +158,9 @@ const Home = () => {
                         <img 
                         src={bigLeftLady} 
                         alt="" 
-                        style={{ }} 
+                        style={{ 
+                    position: "absolute", 
+                    left: "-50%", }} 
                         />
                     <HomePageTitles style={{ 
                     position: "absolute", 
@@ -174,7 +176,7 @@ const Home = () => {
                     <img 
                     src={bigRightLady} 
                     alt="lady on the right" 
-                    style={{ marginLeft: "34vw" }} 
+                    style={{ marginLeft: "70vw" }} 
                     />
                 </DigitalWorkshopsArea>
                 <DigitalWorkshopsArea style={{marginTop: "2vh", marginBottom: "14vh"}}>
