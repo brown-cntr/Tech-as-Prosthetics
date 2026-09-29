@@ -152,8 +152,9 @@ const Home = () => {
                         alt="" 
                         style={{ 
                     position: "absolute", 
-                    left: "-50%", 
+                    left: "-30%", 
                     marginTop: "50%", 
+                    width: "80vw",
                     }} 
                         />
                     <HomePageTitles style={{ 
@@ -173,11 +174,12 @@ const Home = () => {
                     style={{                     
                         position: "absolute", 
                         marginLeft: "70vw",
-                        top: "35%"
+                        top: "45%",
+                        width: "30vw"
                     }} 
                     />
                 </DigitalWorkshopsArea>
-                <DigitalWorkshopsArea style={{marginTop: "90vh", marginBottom: "14vh"}}>
+                <DigitalWorkshopsArea style={{marginTop: "70vh", marginBottom: "14vh"}}>
                     <img src={purpleHill} alt="purple hill" style={{width: "100vw", position: "absolute"}}/>  
                     <img src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
                     <img src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
