@@ -7,13 +7,10 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     MainImageArea,
     ProjectsArea,
     LearnMoreButton,
-    ViewAllProjectsButton,
     ProjectsPart,
     ProjectsDecorative,
     ProjectsPartTitle,
-    HomePageTitles,
-    ProjectsCircle,
-    ProjectsSquare} from "./homepagecomponents";
+    HomePageTitles} from "./homepagecomponents";
 import mainPeople from "../assets/people_top_drawing.svg"
 import rightPeople from "../assets/characters-bottom-right.svg";
 import booksVector from "../assets/books.svg";
@@ -24,13 +21,12 @@ import oldComputer from "../assets/First Computer bkg.svg";
 import ropes from "../assets/ropes.webp";
 import typewriter from "../assets/Typewriter 1.webp";
 import bigLeftLady from "../assets/Face-illustration.webp";
-import bigRightLady from "../assets/realRightLady.svg";
+import bigRightLady from "../assets/realRightLady-1.webp";
 import purpleHill from "../assets/hillpurp.webp";
 import fig7 from "../assets/Fig 7.svg";
 import fig12 from "../assets/Fig 12.svg";
 import fig13 from "../assets/Fig 13.svg";
 import fig15 from "../assets/Fig 15.svg";
-import fig19_1 from "../assets/Fig 19-1.svg";
 import fig19_2 from "../assets/Fig 19-2.svg";
 import fig19 from "../assets/Fig 19.svg";
 
