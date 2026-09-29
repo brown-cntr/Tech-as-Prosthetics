@@ -94,7 +94,7 @@ const Home = () => {
                         <ProjectsPart>
                                 <HomePageTitles style={{ textAlign: "left" }}>
                                     <h1>Experiences</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                                    <p>Explore interactive experiences that uncover the people, practices, and ideas that have shaped the technologies we use today.</p>
                                 </HomePageTitles>
                         </ProjectsPart>
                         <div style={{ marginLeft: "5vw", marginBottom: "2vh", paddingBottom: "3vh" }}>
@@ -106,21 +106,21 @@ const Home = () => {
                         <ProjectsPart>
                             <img src={ropes}/>
                                 <ProjectsPartTitle>
-                                    <h2>Project Title</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    <h2>The Incan Khipu</h2>
+                                    <p>How can information be recorded without traditional writing forms?</p>
                                 </ProjectsPartTitle>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle style={{ textAlign: "right", marginRight: "1rem", marginLeft: "28vw" }}>
-                                    <h2>Project Title</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    <h2>The Typewriter</h2>
+                                    <p>Did you know the typewriter began as a technology of accessibility?</p>
                                 </ProjectsPartTitle>
                                 <img src={typewriter}/>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle>
-                                    <h2>Project Title</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    <h2>The First Computer</h2>
+                                    <p>A computing system that existed first on paper.</p>
                                 </ProjectsPartTitle>    
                         </ProjectsPart>                      
                     </div>
@@ -131,17 +131,21 @@ const Home = () => {
                 <div style={{ minWidth: "50%"}}>
                     <HomePageTitles style={{ marginLeft: "3rem",  textAlign: "left" }}>
                         <h1>Our Mission</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+                        <p>The history of technology is often told through stories of singular inventors and breakthrough machines. But technologies are also shaped by people whose needs, ideas, labor, and ingenuity have been overlooked, including disabled people, women, and gender-marginalized people.</p>
+                        <p>Technologies and/as Prosthetics reimagines these histories through interactive, accessible experiences. We ask what becomes possible when we change not only the stories we tell, but the ways we encounter them.</p>
                     </HomePageTitles>
                     <img src={booksVector} alt="Stack of books" style={{ marginLeft: "-2.5vw"}}/>
                 </div>
                 <DigitalWorkshopExplanation>
                     <hr />
+                    <h4>01. Who gets remembered?</h4>
                     <p>How have contributions to foundational technologies by women, nonbinary people, and disabled individuals been systematically obscured? </p>
                     <hr />
-                    <p>What mechanisms have facilitated these erasures, and how might we reverse them? </p>
+                    <h4>02. How does erasure happen?</h4>
+                    <p>What social, institutional, and disciplinary structures determine whose work is recognized as technological—and whose is not?</p>
                     <hr />
-                    <p> What interdisciplinary methodologies and practices (from gender studies, critical disability studies, science and technology studies, computer science, and the digital humanities, among other areas) might best support the translation of these histories for audiences within and beyond academic spaces?</p>
+                    <h4>03. How can we tell these histories differently?</h4>
+                    <p> What can we learn by bringing together gender studies, disability studies, science and technology studies, computer science, and digital humanities to create more accessible ways of engaging with the past?</p>
                 </DigitalWorkshopExplanation>
             </DigitalWorkshopsArea>
             </FadeSection>
@@ -166,7 +170,9 @@ const Home = () => {
                     textAlign: "center" 
                     }}>
                         <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <h3>Building the project TOGETHER</h3>
+                        <p>"Technologies and/as Prosthetics is not a project created in isolation. Throughout the 2026–2027 academic year, we are bringing together students, scholars, designers, technologists, and members of the greater Brown community to ask how hidden histories can be researched, interpreted, and experienced differently.</p>
+                        <p>Across three interdisciplinary workshops, participants will move from discovery to connection to creation.</p>
                     </HomePageTitles>
                     <img 
                     src={bigRightLady} 
@@ -189,7 +195,7 @@ const Home = () => {
                     <img src={fig19} alt="fig19" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
                     <div style={{width: "30vw", position: "absolute", color: "white", marginLeft: "40vw"}}>
                         <h1>Our Team</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.</p>
                         <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto", background: "#E4D9B5", color: "black", height: "10vh"  }}
                         onClick={() => navigate("/team")}>
                         Meet the Team
