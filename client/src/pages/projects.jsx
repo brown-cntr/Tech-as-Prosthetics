@@ -22,6 +22,8 @@ import { CardTitle } from './projectscomponents';
 import { LearnMoreButton } from './projectscomponents';
 import { CardDescArea } from './Projectscomponents';
 import placeholderImage from "../assets/CNTR_logo_color.png";
+import ropes from "../assets/ropes.webp";
+import typewriter from "../assets/Typewriter 1.webp";
 
 const allProjects = [
   {
@@ -103,11 +105,17 @@ const Projects = () => {
 return (
     <div>
         <ProjectTitle>
-            <h1>Projects</h1>
-            <p style={{width: "60vw", textAlign: "left" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h1>Experiences</h1>
+            <p style={{width: "60vw", textAlign: "left" }}>Explore interactive experiences that uncover the people, practices, and ideas that have shaped the technologies we use today. From Inca khipu to the typewriter to the earliest visions of the computer, each experience invites you to encounter technological history through a different lens—and to reconsider whose contributions have been remembered, overlooked, or left out.</p>
         </ProjectTitle>
         <ProjectsGallery>
             <ProjectsSquare style={{ marginTop: "0vh", marginLeft: "80vw"}} $duration={3 + Math.random() * 2} $delay={Math.random() * 2}>
+                                    <img 
+                                    src={ropes} 
+                                    alt="" 
+                                    style={{ 
+                                }} 
+                                    />
             </ProjectsSquare>
             <ProjectsSquare style={{ marginTop: "5vh", marginLeft: "10vw"}} $duration={3 + Math.random() * 2} $delay={Math.random() * 2}>
             </ProjectsSquare>

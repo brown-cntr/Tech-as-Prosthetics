@@ -13,7 +13,7 @@ import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
     HomePageTitles} from "./homepagecomponents";
 import mainPeople from "../assets/people_top_drawing.svg"
 import rightPeople from "../assets/characters-bottom-right.svg";
-import booksVector from "../assets/books.svg";
+import booksVector from "../assets/boooks.webp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import path from "../assets/Path.svg";
@@ -128,13 +128,13 @@ const Home = () => {
             </FadeSection>
             <FadeSection>
             <DigitalWorkshopsArea>
-                <div style={{ minWidth: "50%"}}>
+                <div style={{ width: "100vw"}}>
                     <HomePageTitles style={{ marginLeft: "3rem",  textAlign: "left" }}>
                         <h1>Our Mission</h1>
                         <p>The history of technology is often told through stories of singular inventors and breakthrough machines. But technologies are also shaped by people whose needs, ideas, labor, and ingenuity have been overlooked, including disabled people, women, and gender-marginalized people.</p>
                         <p>Technologies and/as Prosthetics reimagines these histories through interactive, accessible experiences. We ask what becomes possible when we change not only the stories we tell, but the ways we encounter them.</p>
                     </HomePageTitles>
-                    <img src={booksVector} alt="Stack of books" style={{ marginLeft: "-2.5vw"}}/>
+                    <img src={booksVector} alt="Stack of books" style={{ marginTop: "5vh", marginLeft: "-4vw", width: "50vw"}}/>
                 </div>
                 <DigitalWorkshopExplanation>
                     <hr />

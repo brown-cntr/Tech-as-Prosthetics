@@ -91,10 +91,8 @@ const Team = () => {
         </TopText>
 
         <OtherTopText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut <br/> labore et dolore magna aliqua. Ut 
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            <br/> nisi ut aliquip ex ea commodo consequat.
+            Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.
+             <br/> Our team shares an interest in the histories that conventional narratives leave behind and in finding new ways to make scholarship not only accessible, but interactive and meaningful beyond the university.
         </OtherTopText>
 
         </Header>

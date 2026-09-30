@@ -70,7 +70,7 @@ export const ProjectsPartTitle = styled.div`
 `;
 
 export const HomePageTitles = styled.div`
-    width: 40vw;
+    width: 50vw;
 `;
 
 export const ProjectsSquare = styled.div`
