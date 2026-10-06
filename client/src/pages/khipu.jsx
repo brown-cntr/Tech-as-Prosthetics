@@ -1,15 +1,13 @@
 import React from "react";
-// import {Applications, Assets, Sprite } from 'pixi.js';
 
 const Khipu = () => {
-    return (
-        <div>
-        <h2>Learning react.... 
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </h2>
-        </div>
-    );
+  return (
+    <iframe
+      src="/khipu-game/index.html"
+      title="Khipu Experience"
+      style={{ width: "100%", height: "100vh", border: "none", display: "block" }}
+    />
+  );
 };
 
 export default Khipu;
