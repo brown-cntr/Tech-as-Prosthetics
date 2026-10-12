@@ -1,13 +1,5 @@
-import React from "react";
+import KhipuGame from "../components/khipu/KhipuGame.jsx";
 
-const Khipu = () => {
-  return (
-    <iframe
-      src="/khipu-game/index.html"
-      title="Khipu Experience"
-      style={{ width: "100%", height: "100vh", border: "none", display: "block" }}
-    />
-  );
-};
+const Khipu = () => <KhipuGame />;
 
 export default Khipu;

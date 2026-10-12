@@ -155,6 +155,7 @@ return (
                     />               
                     <HandleButton onClick={() => clickedButton()}>
                         <img 
+                                className="ink-art"
                                 src={arrowUp} 
                                 alt="arrow" 
                                 draggable={false}
@@ -167,7 +168,7 @@ return (
                                 }} 
                             />                 
                     </HandleButton>  
-                    <div style={{ height: "5vh", background: "#9E9A90" }} >           
+                    <div style={{ height: "5vh", background: "var(--gallery)" }} >           
                     </div>
                 </SheetHeader>
                 <SheetContent>

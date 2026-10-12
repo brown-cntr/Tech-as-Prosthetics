@@ -1,22 +1,25 @@
 import React, { useRef } from 'react';
 import styled from "styled-components";
-import { MainArea, MainTitle, MainImage, DigitalWorkshopsArea,
+import { MainArea, MainTitle, DigitalWorkshopsArea,
     DigitalWorkshopExplanation,
     FadeSection,
     MainTitleArea,
     MainImageArea,
+    PeopleDrawing,
+    SidePeople,
+    PathShape,
     ProjectsArea,
     LearnMoreButton,
     ProjectsPart,
     ProjectsDecorative,
     ProjectsPartTitle,
     HomePageTitles} from "./homepagecomponents";
-import mainPeople from "../assets/people_top_drawing.svg"
-import rightPeople from "../assets/characters-bottom-right.svg";
+import mainPeople from "../assets/people_top_drawing.svg?raw"
+import rightPeople from "../assets/characters-bottom-right.svg?raw";
 import booksVector from "../assets/boooks.webp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import path from "../assets/Path.svg";
+import path from "../assets/Path.svg?raw";
 import oldComputer from "../assets/First Computer bkg.svg";
 import ropes from "../assets/ropes.webp";
 import typewriter from "../assets/Typewriter 1.webp";
@@ -54,16 +57,12 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                style={{ position: "relative" }}
                 >
-                <img src={path} alt="path image" 
-                        style={{ 
-                            position: "absolute",
-                            right: "0%",
-                            top: "75%",
-                            zIndex: 0 }} />
+                <PathShape role="img" aria-label="path image" dangerouslySetInnerHTML={{ __html: path }} />
                 <MainArea>
                     <MainImageArea>
-                        <MainImage src={mainPeople} alt="decorative image" />
+                        <PeopleDrawing role="img" aria-label="decorative image" dangerouslySetInnerHTML={{ __html: mainPeople }} />
                         <div style={{ marginLeft: "15vw", width: "60%" }}  >
                             <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
                             <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
@@ -77,17 +76,13 @@ const Home = () => {
                             <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>
                             <MainTitle>Technologies and/as Prosthetics</MainTitle>
                         </div>
-                        <img src={rightPeople} alt="decorative image 2" 
-                        style={{ 
-                            position: "absolute",
-                            right: "0%",
-                            top: "38%" }} />
+                        <SidePeople role="img" aria-label="decorative image 2" dangerouslySetInnerHTML={{ __html: rightPeople }} />
                     </MainTitleArea>
                 </MainArea>
             </motion.div>
-                <ProjectsArea style={{ marginTop: "5vh" }}>
+                <ProjectsArea>
                     <ProjectsDecorative>
-                        <img src={oldComputer} alt="old computer" 
+                        <img className="ink-art" src={oldComputer} alt="old computer" 
                         style={{ height: "100vh" }} />
                     </ProjectsDecorative>
                     <div> 
@@ -151,16 +146,6 @@ const Home = () => {
             </FadeSection>
             <FadeSection>
                 <DigitalWorkshopsArea>
-                        <img 
-                        src={bigLeftLady} 
-                        alt="" 
-                        style={{ 
-                    position: "absolute", 
-                    left: "-30%", 
-                    marginTop: "50%", 
-                    width: "80vw",
-                    }} 
-                        />
                     <HomePageTitles style={{ 
                     position: "absolute", 
                     left: "50%", 
@@ -186,13 +171,26 @@ const Home = () => {
                     />
                 </DigitalWorkshopsArea>
                 <DigitalWorkshopsArea style={{marginTop: "70vh", marginBottom: "14vh"}}>
-                    <img src={purpleHill} alt="purple hill" style={{width: "100vw", position: "absolute"}}/>  
-                    <img src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
-                    <img src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
-                    <img src={fig15} alt="fig15" style={{right: "5vw", top: "40vh", position: "absolute"}}/>
-                    <img src={fig7} alt="fig7" style={{left: "16vw", top: "4vh", position: "absolute"}}/>
-                    <img src={fig19_2} alt="fig19_2" style={{left: "28vw", top: "15vh", position: "absolute"}}/>
-                    <img src={fig19} alt="fig19" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
+                    <div style={{width: "100vw", position: "absolute"}}>
+                        <img
+                            src={bigLeftLady}
+                            alt=""
+                            style={{
+                                position: "absolute",
+                                left: "-30vw",
+                                bottom: "calc(100% - 5.5vw)",
+                                width: "80vw",
+                            }}
+                        />
+                        <img src={purpleHill} alt="purple hill" style={{width: "100%", display: "block", position: "relative"}}/>
+                    </div>
+
+                    <img className="ink-art" src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig15} alt="fig15" style={{right: "5vw", top: "40vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig7} alt="fig7" style={{left: "16vw", top: "4vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig19_2} alt="fig19_2" style={{left: "28vw", top: "15vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig19} alt="fig19" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
                     <div style={{width: "30vw", position: "absolute", color: "white", marginLeft: "40vw"}}>
                         <h1>Our Team</h1>
                         <p>Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.</p>

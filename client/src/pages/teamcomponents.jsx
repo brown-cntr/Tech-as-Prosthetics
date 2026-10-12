@@ -43,7 +43,7 @@ export const Header = styled.div`
 
 export const TopText = styled.div`
     display: flex;
-    color: #635371;
+    color: var(--muted);
     margin-top: 10%;
     margin-left: 5%;
     flex-direction: column;
@@ -63,7 +63,7 @@ export const TopRightText = styled.div`
 export const OtherTopText = styled.div`
     margin-top: 15%;
     font-size: 1.2vw;
-    color: #000000;
+    color: var(--ink);
     text-align: left;
     margin-right: 5%;
 `;

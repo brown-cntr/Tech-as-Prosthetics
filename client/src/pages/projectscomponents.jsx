@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from "framer-motion";
 
 export const Card = styled.div`
-    background: #FAF9F7;
+    background: var(--card);
     min-height: 45vh;
     width: 100%;
     overflow: hidden;
@@ -54,7 +54,7 @@ export const ProjectTitle = styled.div`
 const RawProjectsSquare = styled(motion.div)`
     width: 20vh;
     height: 20vh;
-    background-color: #c4c0b5;
+    background-color: var(--block);
     box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
 `;
 
@@ -121,7 +121,7 @@ export const GridContainer = styled.div`
 export const Gallery = styled.div`
     display: flex;
     justify-content: center;
-    background-color: #9E9A90!important;
+    background-color: var(--gallery) !important;
     padding-top: 7vh;
 `;
 

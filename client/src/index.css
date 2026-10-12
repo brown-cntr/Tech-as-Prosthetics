@@ -17,9 +17,19 @@ rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 --heading: 'IBM Plex Mono', monospace;
 --mono: ui-monospace, Consolas, monospace;
 
+--page: #f2f0e9;
+--nav: #e6e3da;
+--ink: #000000;
+--muted: #635371;
+--surface: #e4d9b5;
+--card: #faf9f7;
+--block: #c4c0b5;
+--gallery: #9e9a90;
+--rule: #333333;
+
 font: 18px/145% var(--sans);
 letter-spacing: 0.18px;
-color-scheme: light dark;
+color-scheme: light;
 color: var(--text);
 background: var(--bg);
 font-synthesis: none;
@@ -32,24 +42,33 @@ font-size: 16px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-:root {
---text: #9ca3af;
---text-h: #f3f4f6;
---bg: #16171d;
---border: #2e303a;
---code-bg: #1f2028;
---accent: #c084fc;
---accent-bg: rgba(192, 132, 252, 0.15);
---accent-border: rgba(192, 132, 252, 0.5);
---social-bg: rgba(47, 48, 58, 0.5);
+[data-theme="dark"] .ink-art {
+filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] {
+--text: #e4dfd4;
+--text-h: #f4f1ea;
+--bg: #1c1a17;
+--border: #3a342c;
+--code-bg: #2a2723;
+--accent: #c4b3d4;
+--accent-bg: rgba(196, 179, 212, 0.15);
+--accent-border: rgba(196, 179, 212, 0.5);
+--social-bg: rgba(42, 39, 35, 0.5);
 --shadow:
 rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
 
-#social .button-icon {
-filter: invert(1) brightness(2);
-  }
+--page: #1c1a17;
+--nav: #2a2723;
+--ink: #f2f0e9;
+--muted: #c4b3d4;
+--surface: #3d362c;
+--card: #2a2723;
+--block: #4a463f;
+--gallery: #3f3c36;
+--rule: #cfc6b4;
+color-scheme: dark;
 }
 
 body {
@@ -64,7 +83,7 @@ min-height: 100svh;
 display: flex;
 flex-direction: column;
 box-sizing: border-box;
-background-color: #F2F0E9;
+background-color: var(--page);
 }
 
 h1,

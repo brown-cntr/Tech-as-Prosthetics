@@ -32,6 +32,56 @@ export const MainImage = styled.img`
     margin-bottom: -30vh;
 `;
 
+export const PeopleDrawing = styled.div`
+    width: 100%;
+    margin-bottom: -30vh;
+    color: var(--ink);
+    line-height: 0;
+
+    svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+`;
+
+export const PathShape = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 295px;
+    overflow: hidden;
+    z-index: 0;
+    color: var(--surface);
+    line-height: 0;
+    pointer-events: none;
+
+    svg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1440px;
+        height: 295px;
+        overflow: visible;
+        display: block;
+    }
+`;
+
+export const SidePeople = styled.div`
+    position: absolute;
+    right: 0%;
+    top: 38%;
+    color: var(--ink);
+    line-height: 0;
+
+    svg {
+        width: 781px;
+        height: 520px;
+        display: block;
+    }
+`;
+
 export const LearnMoreButton = styled.button`
     color: white;
     background-color: #b09cc4;
@@ -51,14 +101,14 @@ export const ProjectsArea = styled.div`
     display: flex; 
     align-items: center;
     min-height: 120vh;
-    padding-top: 0.5%;
-    background-color: #E4D9B5;
+    padding-top: calc(0.5% + 5vh);
+    background-color: var(--surface);
 `;
 
 export const ProjectsPart = styled.div`
     display: flex; 
     height: 20vh;
-    background-color: #E4D9B5;
+    background-color: var(--surface);
     margin-left: 5vw;
     margin-right: 1vw;
     padding-bottom: 3vh;
@@ -76,14 +126,14 @@ export const HomePageTitles = styled.div`
 export const ProjectsSquare = styled.div`
     width: 20vh;
     height: 20vh;
-    background-color: #c4c0b5;
+    background-color: var(--block);
 `;
 
 export const ProjectsCircle = styled.div`
     width: 20vh;
     height: 20vh;
     border-radius: 50%;
-    background-color: #c4c0b5;
+    background-color: var(--block);
     margin-left: 15vw;  
     margin-right: 2%;  
 `;
@@ -101,11 +151,10 @@ export const ViewAllProjectsButton = styled.button`
     padding-bottom: 1%;
     margin-left: 9vw;
     margin-right: 2%;
-    color: white;
-    background-color: #E6E3DA;
-    color: #7B6C55;
+    background-color: var(--nav);
+    color: var(--muted);
     align-self: center;  
-    border: 5px solid #7B6C55;
+    border: 5px solid var(--muted);
     border-radius: 20px;
     display: block;
     cursor: pointer;
@@ -163,7 +212,7 @@ export const HrTrimmed = styled.hr`
     max-width: 80%;
     border: none; 
     height: 0.5vh; 
-    background-color: #333;
+    background-color: var(--rule);
     margin: 0 auto;
 `;
 

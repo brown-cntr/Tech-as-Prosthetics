@@ -12,7 +12,7 @@ export const Logo = styled.img`
 
 export const Box = styled.div`
     padding: 5% 2.5%;
-    background: #E4D9B5;
+    background: var(--surface);
     width: 100%;
 
     @media (max-width: 1000px) {
@@ -61,7 +61,7 @@ export const Row = styled.div`
 export const FooterLink = styled.a`
     margin-bottom: 5%;
     font-size: 80%;
-    color: #000000;
+    color: var(--ink);
     text-decoration: none;
     &:hover {
         color: white;
@@ -80,7 +80,7 @@ export const HrFooter = styled.hr`
     max-width: 100%;
     border: none; 
     height: 0.5vh; 
-    background-color: black;
+    background-color: var(--rule);
     margin: 0 auto;
 `;
 
