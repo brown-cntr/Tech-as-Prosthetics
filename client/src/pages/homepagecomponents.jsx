@@ -48,7 +48,7 @@ export const LearnMoreButton = styled.button`
 `;
 
 export const ProjectsArea = styled.div`
-    display: flex; 
+    display: flex;
     align-items: center;
     min-height: 120vh;
     padding-top: 0.5%;
@@ -56,7 +56,7 @@ export const ProjectsArea = styled.div`
 `;
 
 export const ProjectsPart = styled.div`
-    display: flex; 
+    display: flex;
     height: 20vh;
     background-color: #E4D9B5;
     margin-left: 5vw;
@@ -84,12 +84,12 @@ export const ProjectsCircle = styled.div`
     height: 20vh;
     border-radius: 50%;
     background-color: #c4c0b5;
-    margin-left: 15vw;  
-    margin-right: 2%;  
+    margin-left: 15vw;
+    margin-right: 2%;
 `;
 
 export const ProjectsDecorative = styled.div`
-    display: flex; 
+    display: flex;
     align-items: center;
     width: 40%;
 `;
@@ -104,7 +104,7 @@ export const ViewAllProjectsButton = styled.button`
     color: white;
     background-color: #E6E3DA;
     color: #7B6C55;
-    align-self: center;  
+    align-self: center;
     border: 5px solid #7B6C55;
     border-radius: 20px;
     display: block;
@@ -126,7 +126,7 @@ export const DigitalWorkshopsArea = styled.div`
 
 export const DigitalWorkshopTitle = styled.div`
     text-align: center;
-    margin-left: 10 auto; 
+    margin-left: 10 auto;
     margin-right: 10 auto;
 `;
 
@@ -161,24 +161,66 @@ export const HomeContainer = styled.div`
 
 export const HrTrimmed = styled.hr`
     max-width: 80%;
-    border: none; 
-    height: 0.5vh; 
+    border: none;
+    height: 0.5vh;
     background-color: #333;
     margin: 0 auto;
+`;
+
+/*
+ * Stage: a box with a fixed aspect ratio (the 1440x757 layout the scene was
+ * designed at). Everything inside is positioned and sized in percentages of
+ * the stage, so the whole scene scales together on any screen size.
+ *   $x, $y = top-left corner as % of stage width / height
+ *   $w     = width as % of stage width
+ * Text inside a stage can use cqw units (1cqw = 1% of the stage width).
+ */
+export const Stage = styled.div`
+    position: relative;
+    width: 100%;
+    aspect-ratio: ${p => p.$ratio || "1440 / 757"};
+    container-type: inline-size;
+`;
+
+export const StageImg = styled.img`
+    position: absolute;
+    left: ${p => p.$x}%;
+    top: ${p => p.$y}%;
+    width: ${p => p.$w}%;
+    height: auto;
+`;
+
+export const StageText = styled.div`
+    position: absolute;
+    left: ${p => p.$x}%;
+    top: ${p => p.$y}%;
+    width: ${p => p.$w}%;
+    color: ${p => p.$color || "inherit"};
+    text-align: ${p => p.$align || "inherit"};
+    font-size: 1.11cqw;
+    /* The site has global rules that give p its own size, so force text
+       inside a stage to follow the stage's font size (em units) instead. */
+    p { font-size: 1em !important; line-height: 1.5 !important; margin: 0 0 1em !important; }
+    h1 { font-size: 2.5em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
+    h2 { font-size: 2em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
+    h3 { font-size: 1.75em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
+    h4 { font-size: 1.5em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
+    hr { margin: 1em 0 !important; }
+    button { font-size: 1em; }
 `;
 
 
 export const FadeSection = ({ children }) => {
 const ref = useRef(null);
 const { scrollYProgress } = useScroll({
-  target: ref,
-  offset: ["start end", "start start", "end end", "end start"],
+target: ref,
+offset: ["start end", "start start", "end end", "end start"],
 });
 const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
 
-  return (
-    <motion.div ref={ref} style={{ opacity }}>
-      {children}
-    </motion.div>
+return (
+<motion.div ref={ref} style={{ opacity }}>
+{children}
+</motion.div>
   );
 };
