@@ -2,7 +2,10 @@ import React from "react";
 import {
     GridContainer,
     CardName,
-    CardImage,
+    FlipCard,
+    FlipInner,
+    FlipFront,
+    FlipBack,
     TopText,
     TopLeftText,
     TopRightText,
@@ -28,85 +31,83 @@ import kateImg from "../assets/profilepics/kate.png";
 import kateCartoon from "../assets/profilepics/kateCartoon.png";
 
 import kellieImg from "../assets/profilepics/kellie.png";
-import kellieCartoon from "../assets/profilepics/kellieCartoon.png"
+import kellieCartoon from "../assets/profilepics/kellieCartoon.png";
 
 const teamMembers = [
     {
         profilePic: kimImg,
         cartoonPic: kimCartoon,
         name: "Kim Fernandes",
-        title: "Assistant Professor of Anthropology"
+        title: "Assistant Professor of Anthropology",
     },
-
     {
         profilePic: meredithImg,
         cartoonPic: meredithCartoon,
         name: "Meredith Mendola",
-        title: "CNTR Program Manager, Project Lead"
+        title: "CNTR Program Manager, Project Lead",
     },
-
     {
         profilePic: tjImg,
         cartoonPic: tjCartoon,
         name: "TJ Kalaitzidis",
-        title: "Assistant Director, Learning Systems Innovation"
+        title: "Assistant Director, Learning Systems Innovation",
     },
-
-     {
+    {
         profilePic: kellieImg,
         cartoonPic: kellieCartoon,
         name: "Kellie Louis",
-        title: "Undergraduate Student in Computer Science and History, Development & Design Assistant"
+        title: "Undergraduate Student in Computer Science and History, Development & Design Assistant",
     },
-
-
     {
         profilePic: saryaImg,
         cartoonPic: saryaCartoon,
         name: "Sarya Baran Kiliç",
-        title: "Undergraduate Student in Computer Science and Comparative Literature, Developer Lead"
+        title: "Undergraduate Student in Computer Science and Comparative Literature, Developer Lead",
     },
-
     {
         profilePic: kateImg,
         cartoonPic: kateCartoon,
         name: "Kate Zhang",
-        title: "Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead"
+        title: "Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead",
     },
- ];
+];
 
 
 const Team = () => {
     return (
-    <>
-        <Header>
-        <TopText>
-            <TopLeftText> 
-                Our Team <br/>
-            </TopLeftText>
+        <>
+            <Header>
+                <TopText>
+                    <TopLeftText>
+                        Our Team <br />
+                    </TopLeftText>
 
-            <TopRightText>
-                The People Behind <br/>the Scenes 
-            </TopRightText>
-        </TopText>
+                    <TopRightText>
+                        The People Behind <br />the Scenes
+                    </TopRightText>
+                </TopText>
 
-        <OtherTopText>
-            Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.
-             <br/> Our team shares an interest in the histories that conventional narratives leave behind and in finding new ways to make scholarship not only accessible, but interactive and meaningful beyond the university.
-        </OtherTopText>
+                <OtherTopText>
+                    Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.
+                    <br /> Our team shares an interest in the histories that conventional narratives leave behind and in finding new ways to make scholarship not only accessible, but interactive and meaningful beyond the university.
+                </OtherTopText>
+            </Header>
 
-        </Header>
-
-        <GridContainer>
-            {teamMembers.map((member) => (
-                <Card>
-                <CardImage src={member.profilePic} />
-                <CardName>{member.name}</CardName>
-                <CardText> {member.title}</CardText>
-                </Card>
-            ))}
-        </GridContainer>
-    </>
+            <GridContainer>
+                {teamMembers.map((member) => (
+                    <Card key={member.name}>
+                        <FlipCard tabIndex={0}>
+                            <FlipInner>
+                                <FlipFront src={member.profilePic} alt={member.name} />
+                                <FlipBack src={member.cartoonPic} alt="" aria-hidden="true" />
+                            </FlipInner>
+                        </FlipCard>
+                        <CardName>{member.name}</CardName>
+                        <CardText> {member.title}</CardText>
+                    </Card>
+                ))}
+            </GridContainer>
+        </>
     );
 };
 
