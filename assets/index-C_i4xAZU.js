@@ -455,37 +455,67 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
     margin-left: 5%;
     justify-content: center;
     align-items: center;
-   
 `,$b=I.h5`
     object-fit: cover;
     object-position: 50% 50%;
     margin-top: 10%;
-`,ex=I.img`
+`;I.img`
     width: 70%;
     height: 70%;
-`,tx=I.p`
-`,nx=I.div`
+`;var ex=I.div`
+    width: 70%;
+    perspective: 1000px;
+    cursor: pointer;
+`,tx=I.div`
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+
+    ${ex}:hover &,
+    ${ex}:focus-visible & {
+        transform: rotateY(180deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+`,nx=I.img`
+    display: block;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+`,rx=I.img`
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+`,ix=I.p`
+`,ax=I.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-`,rx=I.div`
+`,ox=I.div`
     display: flex;
     color: #635371;
     margin-top: 10%;
     margin-left: 5%;
     flex-direction: column;
-`,ix=I.div`
+`,sx=I.div`
     font-size: 2vw;
     text-align: left;
-`,ax=I.div`
+`,cx=I.div`
     font-size: 3vw;
     text-align: left;
-`,ox=I.div`
+`,lx=I.div`
     margin-top: 15%;
     font-size: 1.2vw;
     color: #000000;
     text-align: left;
     margin-right: 5%;
-`,sx=[{profilePic:`/assets/kim-RysMT2x4.png`,cartoonPic:`/assets/kimCartoon-B2mmSjlJ.png`,name:`Kim Fernandes`,title:`Assistant Professor of Anthropology`},{profilePic:`/assets/meredith-BvXT31k5.png`,cartoonPic:`/assets/meredithCartoon-BrqM2wQt.png`,name:`Meredith Mendola`,title:`CNTR Program Manager, Project Lead`},{profilePic:`/assets/tj-BJxqJ8nE.png`,cartoonPic:`/assets/tjCartoon-DT0bK1Oo.png`,name:`TJ Kalaitzidis`,title:`Assistant Director, Learning Systems Innovation`},{profilePic:`/assets/kellie-B8wfCTEX.png`,cartoonPic:`/assets/kellieCartoon-DEJqFnVX.png`,name:`Kellie Louis`,title:`Undergraduate Student in Computer Science and History, Development & Design Assistant`},{profilePic:`/assets/sarya-DmROYxic.png`,cartoonPic:`/assets/saryaCartoon-DPgWJuKV.png`,name:`Sarya Baran Kiliç`,title:`Undergraduate Student in Computer Science and Comparative Literature, Developer Lead`},{profilePic:`/assets/kate-DAV5XwOs.png`,cartoonPic:`/assets/kateCartoon-CrqrWrjy.png`,name:`Kate Zhang`,title:`Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead`}],cx=()=>(0,L.jsxs)(L.Fragment,{children:[(0,L.jsxs)(nx,{children:[(0,L.jsxs)(rx,{children:[(0,L.jsxs)(ix,{children:[`Our Team `,(0,L.jsx)(`br`,{})]}),(0,L.jsxs)(ax,{children:[`The People Behind `,(0,L.jsx)(`br`,{}),`the Scenes`]})]}),(0,L.jsxs)(ox,{children:[`Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.`,(0,L.jsx)(`br`,{}),` Our team shares an interest in the histories that conventional narratives leave behind and in finding new ways to make scholarship not only accessible, but interactive and meaningful beyond the university.`]})]}),(0,L.jsx)(Zb,{children:sx.map(e=>(0,L.jsxs)(Qb,{children:[(0,L.jsx)(ex,{src:e.profilePic}),(0,L.jsx)($b,{children:e.name}),(0,L.jsxs)(tx,{children:[` `,e.title]})]}))})]}),lx=()=>(0,L.jsx)(`iframe`,{src:`/khipu-game/index.html`,title:`Khipu Experience`,style:{width:`100%`,height:`100vh`,border:`none`,display:`block`}}),ux=()=>{let{pathname:e}=Pt();return(0,b.useEffect)(()=>{window.scrollTo(0,0)},[e]),null},dx=I.nav`
+`,ux=[{profilePic:`/assets/kim-RysMT2x4.png`,cartoonPic:`/assets/kimCartoon-B2mmSjlJ.png`,name:`Kim Fernandes`,title:`Assistant Professor of Anthropology`},{profilePic:`/assets/meredith-BvXT31k5.png`,cartoonPic:`/assets/meredithCartoon-BrqM2wQt.png`,name:`Meredith Mendola`,title:`CNTR Program Manager, Project Lead`},{profilePic:`/assets/tj-BJxqJ8nE.png`,cartoonPic:`/assets/tjCartoon-DT0bK1Oo.png`,name:`TJ Kalaitzidis`,title:`Assistant Director, Learning Systems Innovation`},{profilePic:`/assets/kellie-B8wfCTEX.png`,cartoonPic:`/assets/kellieCartoon-DEJqFnVX.png`,name:`Kellie Louis`,title:`Undergraduate Student in Computer Science and History, Development & Design Assistant`},{profilePic:`/assets/sarya-DmROYxic.png`,cartoonPic:`/assets/saryaCartoon-DPgWJuKV.png`,name:`Sarya Baran Kiliç`,title:`Undergraduate Student in Computer Science and Comparative Literature, Developer Lead`},{profilePic:`/assets/kate-DAV5XwOs.png`,cartoonPic:`/assets/kateCartoon-CrqrWrjy.png`,name:`Kate Zhang`,title:`Undergraduate Student in Applied Mathematics and Human-Centered Design, Design Lead`}],dx=()=>(0,L.jsxs)(L.Fragment,{children:[(0,L.jsxs)(ax,{children:[(0,L.jsxs)(ox,{children:[(0,L.jsxs)(sx,{children:[`Our Team `,(0,L.jsx)(`br`,{})]}),(0,L.jsxs)(cx,{children:[`The People Behind `,(0,L.jsx)(`br`,{}),`the Scenes`]})]}),(0,L.jsxs)(lx,{children:[`Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.`,(0,L.jsx)(`br`,{}),` Our team shares an interest in the histories that conventional narratives leave behind and in finding new ways to make scholarship not only accessible, but interactive and meaningful beyond the university.`]})]}),(0,L.jsx)(Zb,{children:ux.map(e=>(0,L.jsxs)(Qb,{children:[(0,L.jsx)(ex,{tabIndex:0,children:(0,L.jsxs)(tx,{children:[(0,L.jsx)(nx,{src:e.profilePic,alt:e.name}),(0,L.jsx)(rx,{src:e.cartoonPic,alt:``,"aria-hidden":`true`})]})}),(0,L.jsx)($b,{children:e.name}),(0,L.jsxs)(ix,{children:[` `,e.title]})]},e.name))})]}),fx=()=>(0,L.jsx)(`iframe`,{src:`/khipu-game/index.html`,title:`Khipu Experience`,style:{width:`100%`,height:`100vh`,border:`none`,display:`block`}}),px=()=>{let{pathname:e}=Pt();return(0,b.useEffect)(()=>{window.scrollTo(0,0)},[e]),null},mx=I.nav`
 
-`;function fx(){return(0,L.jsxs)(Qn,{children:[(0,L.jsx)(ux,{}),(0,L.jsx)(Do,{}),(0,L.jsx)(dx,{children:(0,L.jsxs)(dn,{children:[(0,L.jsx)(ln,{exact:!0,path:`/`,element:(0,L.jsx)(ey,{})}),(0,L.jsx)(ln,{path:`/index`,element:(0,L.jsx)(ey,{})}),(0,L.jsx)(ln,{path:`/projects`,element:(0,L.jsx)(Xb,{})}),(0,L.jsx)(ln,{path:`/team`,element:(0,L.jsx)(cx,{})}),(0,L.jsx)(ln,{path:`/khipu`,element:(0,L.jsx)(lx,{})})]})}),(0,L.jsx)(Lo,{})]})}(0,x.createRoot)(document.getElementById(`root`)).render((0,L.jsx)(b.StrictMode,{children:(0,L.jsx)(fx,{})}));
+`;function hx(){return(0,L.jsxs)(Qn,{children:[(0,L.jsx)(px,{}),(0,L.jsx)(Do,{}),(0,L.jsx)(mx,{children:(0,L.jsxs)(dn,{children:[(0,L.jsx)(ln,{exact:!0,path:`/`,element:(0,L.jsx)(ey,{})}),(0,L.jsx)(ln,{path:`/index`,element:(0,L.jsx)(ey,{})}),(0,L.jsx)(ln,{path:`/projects`,element:(0,L.jsx)(Xb,{})}),(0,L.jsx)(ln,{path:`/team`,element:(0,L.jsx)(dx,{})}),(0,L.jsx)(ln,{path:`/khipu`,element:(0,L.jsx)(fx,{})})]})}),(0,L.jsx)(Lo,{})]})}(0,x.createRoot)(document.getElementById(`root`)).render((0,L.jsx)(b.StrictMode,{children:(0,L.jsx)(hx,{})}));
