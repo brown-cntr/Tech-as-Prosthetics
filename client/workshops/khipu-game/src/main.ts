@@ -41,7 +41,7 @@ const texturePaths = [
 'assets/onesTexture.png',
 'assets/cord.png',
 'assets/menuoptions.png',
-'assets/khipuGuide1.svg',
+'assets/khipuGuide1.webp',
 'assets/khipu.png',
 'assets/exit.png',
 'assets/noProgressCord.png',
@@ -499,7 +499,7 @@ function guideClick(container: Container, app: Application){
   xOut.eventMode = 'static';
   xOut.cursor = 'pointer';
 
-  const khipuGuideSprite = new Sprite(textures['assets/khipuGuide1.svg']);
+  const khipuGuideSprite = new Sprite(textures['assets/khipuGuide1.webp']);
   khipuGuideSprite.width = 750;
   khipuGuideSprite.height = 425;
   khipuGuideSprite.x = 290;
