@@ -128,3 +128,13 @@ Do not use `cairosvg` for SVGs that contain a `<mask>`. It renders them
 cropped or misaligned, even though the SVG is valid. Render with a real
 browser engine (for example headless Chromium) and check the result against
 the original.
+
+## Known issues in the Khipu game
+
+These are in `client/workshops/khipu-game/src` and have not been fixed yet.
+
+- **The game slows down the longer it is played.** Event listeners (`.on('pointerdown', ...)`) are added inside click handlers, so every click adds another copy of the same listener instead of replacing it. Listeners should be registered once, when the object is created.
+- **`createCord` runs twice in `cordHitbox`.** Each click can create duplicate cord objects, which adds to the slowdown above. One of the two calls should be removed.
+- **`hintClick` uses the wrong texture key.** Textures are stored under paths like `assets/hintSprite.png`, but `hintClick` looks up `'hintSprite.png'`, so the hint sprite may come back undefined.
+- **The guide image is very large.** `public/assets/khipuGuide1.svg` is about 31 MB because a PNG is embedded inside it, and it downloads whenever `/khipu` opens. It should be rendered to a resized WebP.
+- **Unused files.** `public/assets/khipuguide.png` (about 5 MB) and `guide.png` are not used by the game.
