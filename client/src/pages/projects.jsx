@@ -149,15 +149,20 @@ return (
                 <SheetHeader unstyled>
                     <img 
                         src={handle} 
-                        alt="handle" 
+                                alt=""
                         draggable={false}
                         style={{ height: "5vh", display: "block", pointerEvents: "none" }} 
                     />               
-                    <HandleButton onClick={() => clickedButton()}>
+                    <HandleButton
+                        type="button"
+                        aria-label={isFlipped ? "Collapse experiences sheet" : "Expand experiences sheet"}
+                        onClick={() => clickedButton()}
+                    >
                         <img 
                                 className="ink-art"
                                 src={arrowUp} 
-                                alt="arrow" 
+                                alt=""
+                                aria-hidden="true" 
                                 draggable={false}
                                 style={{ 
                                     height: "3vh", 

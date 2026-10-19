@@ -11,7 +11,6 @@ import {
     OtherTopText,
     Header,
 } from "./teamcomponents";
-import teamBottomImg from "../assets/teamBottomImg.png";
 import kimImg from "../assets/profilepics/kim.png";
 import kimCartoon from "../assets/profilepics/kimCartoon.png";
 
@@ -28,7 +27,7 @@ import kateImg from "../assets/profilepics/kate.png";
 import kateCartoon from "../assets/profilepics/kateCartoon.png";
 
 import kellieImg from "../assets/profilepics/kellie.png";
-import kellieCartoon from "../assets/profilepics/kellieCartoon.png"
+import kellieCartoon from "../assets/profilepics/kellieCartoon.png";
 
 const teamMembers = [
     {
@@ -81,12 +80,12 @@ const Team = () => {
     <>
         <Header>
         <TopText>
-            <TopLeftText> 
-                Our Team <br/>
+            <TopLeftText as="h1">
+                Our Team
             </TopLeftText>
 
-            <TopRightText>
-                The People Behind <br/>the Scenes 
+            <TopRightText as="p">
+                The People Behind <br/>the Scenes
             </TopRightText>
         </TopText>
 
@@ -99,8 +98,8 @@ const Team = () => {
 
         <GridContainer>
             {teamMembers.map((member) => (
-                <Card>
-                <CardImage src={member.profilePic} />
+                <Card key={member.name}>
+                <CardImage src={member.profilePic} alt={member.name} />
                 <CardName>{member.name}</CardName>
                 <CardText> {member.title}</CardText>
                 </Card>

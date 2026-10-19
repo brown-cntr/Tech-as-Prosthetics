@@ -1,7 +1,7 @@
 // Filename - components/Footer.js
 
 import React from "react";
-// components/FooterStyles.js
+import { Link } from "react-router-dom";
 import logo from "../assets/projectLogo.png";
 import styled from "styled-components";
 
@@ -10,7 +10,7 @@ export const Logo = styled.img`
     height: 10%;
 `;
 
-export const Box = styled.div`
+export const Box = styled.footer`
     padding: 5% 2.5%;
     background: var(--surface);
     width: 100%;
@@ -27,7 +27,6 @@ export const FooterContainer = styled.div`
     max-width: 1000px;
     margin: 0 auto;
 `;
-
 
 export const FooterSpacer = styled.div`
     display: flex;
@@ -58,28 +57,52 @@ export const Row = styled.div`
     }
 `;
 
-export const FooterLink = styled.a`
+const linkStyles = `
     margin-bottom: 5%;
     font-size: 80%;
     color: var(--ink);
     text-decoration: none;
+    border-radius: 2px;
+
     &:hover {
-        color: white;
-        transition: 200ms ease-in;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
     }
 `;
 
-export const Heading = styled.p`
+export const FooterLink = styled.a`
+    ${linkStyles}
+`;
+
+export const FooterRouterLink = styled(Link)`
+    ${linkStyles}
+`;
+
+export const FooterMuted = styled.span`
+    display: block;
+    margin-bottom: 5%;
+    font-size: 80%;
+    color: var(--ink);
+`;
+
+export const Heading = styled.h2`
     font-size: 90%;
-    background: #d4drgba(38, 38, 38, 1)
-    margin-bottom: 40px;
+    margin: 0 0 40px;
     font-weight: bold;
+    font-family: var(--sans);
+    color: var(--ink);
+    letter-spacing: normal;
 `;
 
 export const HrFooter = styled.hr`
     max-width: 100%;
-    border: none; 
-    height: 0.5vh; 
+    border: none;
+    height: 0.5vh;
     background-color: var(--rule);
     margin: 0 auto;
 `;
@@ -87,44 +110,44 @@ export const HrFooter = styled.hr`
 const Footer = () => {
     return (
         <div>
-            <HrFooter/>
+            <HrFooter />
             <Box>
                 <FooterContainer>
                     <FooterSpacer>
-                    <Logo src={logo} alt="MainImage" />
-                    <Row>
-                         <Column>
-                         <Heading>Contact us</Heading>
-                            <FooterLink href="#">
-                                Email:<br />
-                                email@brown.edu
-                            </FooterLink>
-                        </Column>
-                        <Column>
-                            <Heading>Experiences</Heading>
-                            <FooterLink href="/techasprosthetics.io/projects/khipu">
-                                The Incan Khipu
-                            </FooterLink>
-                            <FooterLink href="#">
-                                Ada Lovelace's Analytical Engine
-                            </FooterLink>
-                            <FooterLink href="#">
-                               The QWERTY Keyboard
-                            </FooterLink>
-                        </Column>
-                        <Column>
-                            <Heading>Quicklinks</Heading>
-                            <FooterLink href="#">
-                                Home
-                            </FooterLink>
-                            <FooterLink href="#">
-                                Experiences
-                            </FooterLink>
-                            <FooterLink href="#">
-                                Teams
-                            </FooterLink>
-                        </Column>
-                    </Row>
+                        <Logo src={logo} alt="Technologies and/as Prosthetics" />
+                        <Row>
+                            <Column>
+                                <Heading>Contact us</Heading>
+                                <FooterLink href="mailto:email@brown.edu">
+                                    Email:<br />
+                                    email@brown.edu
+                                </FooterLink>
+                            </Column>
+                            <Column>
+                                <Heading>Experiences</Heading>
+                                <FooterRouterLink to="/khipu">
+                                    The Incan Khipu
+                                </FooterRouterLink>
+                                <FooterMuted>
+                                    Ada Lovelace&apos;s Analytical Engine
+                                </FooterMuted>
+                                <FooterMuted>
+                                    The QWERTY Keyboard
+                                </FooterMuted>
+                            </Column>
+                            <Column>
+                                <Heading>Quicklinks</Heading>
+                                <FooterRouterLink to="/">
+                                    Home
+                                </FooterRouterLink>
+                                <FooterRouterLink to="/projects">
+                                    Experiences
+                                </FooterRouterLink>
+                                <FooterRouterLink to="/team">
+                                    Team
+                                </FooterRouterLink>
+                            </Column>
+                        </Row>
                     </FooterSpacer>
                 </FooterContainer>
             </Box>

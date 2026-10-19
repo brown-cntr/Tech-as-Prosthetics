@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Sheet } from 'react-modal-sheet';
 import { useState } from 'react';
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export const Card = styled.div`
     background: var(--card);
@@ -13,12 +13,24 @@ export const Card = styled.div`
     transform: scale(1.1);
     z-index: 10;
   }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+        &:hover {
+            transform: none;
+        }
+    }
 `;
 
-export const CardTitle = styled.h6`
+export const CardTitle = styled.h2`
     object-fit: cover;
     object-position: 50% 50%;
     font-weight: bold;
+    font-size: 1rem;
+    font-family: var(--sans);
+    letter-spacing: normal;
+    margin: 0;
+    line-height: 1.3;
 `;
 
 export const CardDescArea = styled.div`
@@ -60,6 +72,7 @@ const RawProjectsSquare = styled(motion.div)`
 
 export const ProjectsSquare = (props) => {
     const [isHovered, setIsHovered] = useState(false);
+    const reduceMotion = useReducedMotion();
     const { $duration, $delay, style, ...rest } = props;
 
     return (
@@ -71,12 +84,16 @@ export const ProjectsSquare = (props) => {
         >
             <RawProjectsSquare
                 animate={
-                    isHovered
+                    reduceMotion
+                        ? { scale: 1, x: 0, y: 0 }
+                        : isHovered
                         ? { scale: 1.1, x: 0, y: 0 }
                         : { scale: 1, x: [0, 6, -4, -8, 0], y: [0, -10, -14, -6, 0] }
                 }
                 transition={
-                    isHovered
+                    reduceMotion
+                        ? { duration: 0 }
+                        : isHovered
                         ? { duration: 0.15 }
                         : {
                             scale: { duration: 0.2 },
@@ -140,16 +157,23 @@ export const HandleButton = styled.button`
 export const LearnMoreButton = styled.button`
     align-self: center;
     margin-left: 0.3vw;
-    color: white;
-    background-color: #b09cc4;
+    color: var(--cta-text);
+    background-color: var(--cta-bg);
     border: none;
     border-radius: 8px;
     width: 90%;
     display: block;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease;
+    &:hover {
+        background-color: var(--cta-bg-active);
+    }
     &:active {
-        background-color: #8f7aa8;
+        background-color: var(--cta-bg-active);
         transform: scale(0.97);
+    }
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
     }
 `;

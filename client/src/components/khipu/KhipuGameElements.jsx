@@ -60,17 +60,14 @@ export const ImageButton = styled.button`
         height: 100%;
     }
 
+    /* Stage UI is always light cream; keep a dark ring for 3:1 UI contrast */
     &:focus-visible {
         outline: 3px solid #635371;
         outline-offset: 2px;
     }
 `;
 
-export const HotspotButton = styled(ImageButton)`
-    &[aria-pressed="true"] {
-        box-shadow: 0 0 0 3px #f7f5ea, 0 0 0 6px #635371;
-    }
-`;
+export const HotspotButton = ImageButton;
 
 export const ExerciseText = styled.p`
     position: absolute;

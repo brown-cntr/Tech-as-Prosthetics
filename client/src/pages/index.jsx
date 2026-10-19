@@ -17,7 +17,7 @@ import { MainArea, MainTitle, DigitalWorkshopsArea,
 import mainPeople from "../assets/people_top_drawing.svg?raw"
 import rightPeople from "../assets/characters-bottom-right.svg?raw";
 import booksVector from "../assets/boooks.webp";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import path from "../assets/Path.svg?raw";
 import oldComputer from "../assets/First Computer bkg.svg";
@@ -36,6 +36,7 @@ import fig19 from "../assets/Fig 19.svg";
 
 const Home = () => {
         const navigate = useNavigate();
+        const reduceMotion = useReducedMotion();
         const gridRef = useRef();
         const handleGrid = (direction) => {
         if (direction === 'left') {
@@ -54,19 +55,19 @@ const Home = () => {
         <div>
             <FadeSection>
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: reduceMotion ? 0 : 0.5 }}
                 style={{ position: "relative" }}
-                >
-                <PathShape role="img" aria-label="path image" dangerouslySetInnerHTML={{ __html: path }} />
+                >                <PathShape role="img" aria-label="Winding path graphic" dangerouslySetInnerHTML={{ __html: path }} />
                 <MainArea>
                     <MainImageArea>
-                        <PeopleDrawing role="img" aria-label="decorative image" dangerouslySetInnerHTML={{ __html: mainPeople }} />
+                        <PeopleDrawing aria-hidden="true" dangerouslySetInnerHTML={{ __html: mainPeople }} />
                         <div style={{ marginLeft: "15vw", width: "60%" }}  >
                             <p style={{ textAlign: "left" }}>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
-                            <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
-                            onClick={() => navigate("/about")}>
+                            <LearnMoreButton
+                            aria-label="Learn More about Experiences"
+                            onClick={() => navigate("/projects")}>
                             Learn More
                             </LearnMoreButton>
                         </div>
@@ -76,45 +77,45 @@ const Home = () => {
                             <p style={{ fontStyle: "italic", textAlign: "left" }}>Technology Shaped By Different Paths</p>
                             <MainTitle>Technologies and/as Prosthetics</MainTitle>
                         </div>
-                        <SidePeople role="img" aria-label="decorative image 2" dangerouslySetInnerHTML={{ __html: rightPeople }} />
+                        <SidePeople aria-hidden="true" dangerouslySetInnerHTML={{ __html: rightPeople }} />
                     </MainTitleArea>
                 </MainArea>
             </motion.div>
                 <ProjectsArea>
                     <ProjectsDecorative>
-                        <img className="ink-art" src={oldComputer} alt="old computer" 
+                        <img className="ink-art" src={oldComputer} alt=""
                         style={{ height: "100vh" }} />
                     </ProjectsDecorative>
                     <div> 
                         <ProjectsPart>
                                 <HomePageTitles style={{ textAlign: "left" }}>
-                                    <h1>Experiences</h1>
+                                    <h2>Experiences</h2>
                                     <p>Explore interactive experiences that uncover the people, practices, and ideas that have shaped the technologies we use today.</p>
                                 </HomePageTitles>
                         </ProjectsPart>
                         <div style={{ marginLeft: "5vw", marginBottom: "2vh", paddingBottom: "3vh" }}>
-                            <LearnMoreButton title="View All Projects" style={{ height: "10vh", width: "20vw" }}
+                            <LearnMoreButton aria-label="View All Projects" style={{ height: "10vh", width: "20vw" }}
                                 onClick={() => navigate("/projects")}>
                                 View All Projects
                             </LearnMoreButton>
                         </div>
                         <ProjectsPart>
-                            <img src={ropes}/>
+                            <img src={ropes} alt="Incan khipu cords"/>
                                 <ProjectsPartTitle>
-                                    <h2>The Incan Khipu</h2>
+                                    <h3>The Incan Khipu</h3>
                                     <p>How can information be recorded without traditional writing forms?</p>
                                 </ProjectsPartTitle>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle style={{ textAlign: "right", marginRight: "1rem", marginLeft: "28vw" }}>
-                                    <h2>The Typewriter</h2>
+                                    <h3>The Typewriter</h3>
                                     <p>Did you know the typewriter began as a technology of accessibility?</p>
                                 </ProjectsPartTitle>
-                                <img src={typewriter}/>
+                                <img src={typewriter} alt="Typewriter"/>
                         </ProjectsPart>
                         <ProjectsPart>
                                 <ProjectsPartTitle>
-                                    <h2>The First Computer</h2>
+                                    <h3>The First Computer</h3>
                                     <p>A computing system that existed first on paper.</p>
                                 </ProjectsPartTitle>    
                         </ProjectsPart>                      
@@ -125,21 +126,21 @@ const Home = () => {
             <DigitalWorkshopsArea>
                 <div style={{ width: "100vw"}}>
                     <HomePageTitles style={{ marginLeft: "3rem",  textAlign: "left" }}>
-                        <h1>Our Mission</h1>
+                        <h2>Our Mission</h2>
                         <p>The history of technology is often told through stories of singular inventors and breakthrough machines. But technologies are also shaped by people whose needs, ideas, labor, and ingenuity have been overlooked, including disabled people, women, and gender-marginalized people.</p>
                         <p>Technologies and/as Prosthetics reimagines these histories through interactive, accessible experiences. We ask what becomes possible when we change not only the stories we tell, but the ways we encounter them.</p>
                     </HomePageTitles>
-                    <img src={booksVector} alt="Stack of books" style={{ marginTop: "5vh", marginLeft: "-4vw", width: "50vw"}}/>
+                    <img src={booksVector} alt="" style={{ marginTop: "5vh", marginLeft: "-4vw", width: "50vw"}}/>
                 </div>
                 <DigitalWorkshopExplanation>
                     <hr />
-                    <h4>01. Who gets remembered?</h4>
+                    <h3>01. Who gets remembered?</h3>
                     <p>How have contributions to foundational technologies by women, nonbinary people, and disabled individuals been systematically obscured? </p>
                     <hr />
-                    <h4>02. How does erasure happen?</h4>
+                    <h3>02. How does erasure happen?</h3>
                     <p>What social, institutional, and disciplinary structures determine whose work is recognized as technological—and whose is not?</p>
                     <hr />
-                    <h4>03. How can we tell these histories differently?</h4>
+                    <h3>03. How can we tell these histories differently?</h3>
                     <p> What can we learn by bringing together gender studies, disability studies, science and technology studies, computer science, and digital humanities to create more accessible ways of engaging with the past?</p>
                 </DigitalWorkshopExplanation>
             </DigitalWorkshopsArea>
@@ -154,14 +155,14 @@ const Home = () => {
                     maxWidth: "30%", 
                     textAlign: "center" 
                     }}>
-                        <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
+                        <h2 style={{ fontWeight: "bold" }}>Workshops</h2>
                         <h3>Building the project TOGETHER</h3>
                         <p>"Technologies and/as Prosthetics is not a project created in isolation. Throughout the 2026–2027 academic year, we are bringing together students, scholars, designers, technologists, and members of the greater Brown community to ask how hidden histories can be researched, interpreted, and experienced differently.</p>
                         <p>Across three interdisciplinary workshops, participants will move from discovery to connection to creation.</p>
                     </HomePageTitles>
                     <img 
                     src={bigRightLady} 
-                    alt="lady on the right" 
+                    alt="" 
                     style={{                     
                         position: "absolute", 
                         marginLeft: "70vw",
@@ -182,19 +183,19 @@ const Home = () => {
                                 width: "80vw",
                             }}
                         />
-                        <img src={purpleHill} alt="purple hill" style={{width: "100%", display: "block", position: "relative"}}/>
+                        <img src={purpleHill} alt="" style={{width: "100%", display: "block", position: "relative"}}/>
                     </div>
 
-                    <img className="ink-art" src={fig13} alt="fig13" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
-                    <img className="ink-art" src={fig12} alt="fig12" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
-                    <img className="ink-art" src={fig15} alt="fig15" style={{right: "5vw", top: "40vh", position: "absolute"}}/>
-                    <img className="ink-art" src={fig7} alt="fig7" style={{left: "16vw", top: "4vh", position: "absolute"}}/>
-                    <img className="ink-art" src={fig19_2} alt="fig19_2" style={{left: "28vw", top: "15vh", position: "absolute"}}/>
-                    <img className="ink-art" src={fig19} alt="fig19" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
-                    <div style={{width: "30vw", position: "absolute", color: "white", marginLeft: "40vw"}}>
-                        <h1>Our Team</h1>
+                    <img className="ink-art" src={fig13} alt="" style={{left: "22vw", top: "-14vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig12} alt="" style={{right: "3vw", top: "-1vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig15} alt="" style={{right: "5vw", top: "40vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig7} alt="" style={{left: "16vw", top: "4vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig19_2} alt="" style={{left: "28vw", top: "15vh", position: "absolute"}}/>
+                    <img className="ink-art" src={fig19} alt="" style={{left: "42vw", top: "33vh", position: "absolute"}}/>
+                    <div className="team-hill-copy" style={{width: "30vw", position: "absolute", marginLeft: "40vw"}}>
+                        <h2>Our Team</h2>
                         <p>Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.</p>
-                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto", background: "#E4D9B5", color: "black", height: "10vh"  }}
+                        <LearnMoreButton aria-label="Meet the Team" style={{ margin: "0 auto", background: "#E4D9B5", color: "black", height: "10vh"  }}
                         onClick={() => navigate("/team")}>
                         Meet the Team
                         </LearnMoreButton>

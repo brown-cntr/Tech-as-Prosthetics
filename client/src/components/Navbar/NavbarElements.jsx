@@ -26,7 +26,8 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 0;
+    padding: 4px;
+    margin: -4px;
     height: auto;
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
@@ -34,12 +35,24 @@ export const NavLink = styled(Link)`
     font-weight: 400;
     line-height: normal;
     white-space: nowrap;
+    border-radius: 4px;
+
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 `;
 
 export const NavImgLink = styled(Link)`
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    border-radius: 4px;
+
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 `;
 
 export const LogoFrame = styled.span`
@@ -85,4 +98,10 @@ export const ThemeButton = styled.button`
     color: var(--muted);
     cursor: pointer;
     flex-shrink: 0;
+    border-radius: 4px;
+
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 `;

@@ -19,10 +19,14 @@ export const Card = styled.div`
    
 `;
 
-export const CardName = styled.h5`
+export const CardName = styled.h2`
     object-fit: cover;
     object-position: 50% 50%;
     margin-top: 10%;
+    font-size: 1.1rem;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: normal;
 `;
 
 export const CardImage = styled.img`
@@ -53,11 +57,23 @@ export const TopText = styled.div`
 export const TopLeftText = styled.div`
     font-size: 2vw;
     text-align: left;
+    margin: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: normal;
+    color: inherit;
+    line-height: inherit;
 `;
 
 export const TopRightText = styled.div`
     font-size: 3vw;
     text-align: left;
+    margin: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: normal;
+    color: inherit;
+    line-height: inherit;
 `;
 
 export const OtherTopText = styled.div`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export const MainArea = styled.div`
@@ -83,17 +83,24 @@ export const SidePeople = styled.div`
 `;
 
 export const LearnMoreButton = styled.button`
-    color: white;
-    background-color: #b09cc4;
+    color: var(--cta-text);
+    background-color: var(--cta-bg);
     border: none;
     border-radius: 8px;
     width: 66.666%;
     display: block;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease;
+    &:hover {
+        background-color: var(--cta-bg-active);
+    }
     &:active {
-        background-color: #8f7aa8;
+        background-color: var(--cta-bg-active);
         transform: scale(0.97);
+    }
+    &:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 2px;
     }
 `;
 
@@ -219,11 +226,16 @@ export const HrTrimmed = styled.hr`
 
 export const FadeSection = ({ children }) => {
 const ref = useRef(null);
+const reduceMotion = useReducedMotion();
 const { scrollYProgress } = useScroll({
   target: ref,
   offset: ["start end", "start start", "end end", "end start"],
 });
 const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+
+  if (reduceMotion) {
+    return <div ref={ref}>{children}</div>;
+  }
 
   return (
     <motion.div ref={ref} style={{ opacity }}>
