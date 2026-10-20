@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+/*
+ * Colors and text sizes come from the variables in index.css (var(--...)),
+ * so a change there updates every page. Avoid hard-coded colors or font sizes
+ * in this file.
+ */
+
 export const MainArea = styled.div`
     display: flex;
     min-height: 100vh;
@@ -16,16 +22,16 @@ export const MainTitleArea = styled.div`
     padding-top: 5%;
     margin-left: -7vw;
 `;
+
 export const MainTitle = styled.h1`
-    font-size: 3rem;
-    font-weight: 500;
     text-align: left;
-    line-height: 1.1;
 `;
+
 export const MainImageArea = styled.div`
     max-width: 80%;
     align-items: left;
 `;
+
 export const MainImage = styled.img`
     width: 100%;
     align-items: left;
@@ -33,16 +39,19 @@ export const MainImage = styled.img`
 `;
 
 export const LearnMoreButton = styled.button`
-    color: white;
-    background-color: #b09cc4;
+    color: var(--cta-text);
+    background-color: var(--cta-bg);
+    font-family: var(--sans);
+    font-weight: 600;
     border: none;
     border-radius: 8px;
     width: 66.666%;
     display: block;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease;
+
     &:active {
-        background-color: #8f7aa8;
+        background-color: var(--cta-bg-active);
         transform: scale(0.97);
     }
 `;
@@ -52,13 +61,13 @@ export const ProjectsArea = styled.div`
     align-items: center;
     min-height: 120vh;
     padding-top: 0.5%;
-    background-color: #E4D9B5;
+    background-color: var(--surface);
 `;
 
 export const ProjectsPart = styled.div`
     display: flex;
     height: 20vh;
-    background-color: #E4D9B5;
+    background-color: var(--surface);
     margin-left: 5vw;
     margin-right: 1vw;
     padding-bottom: 3vh;
@@ -76,14 +85,14 @@ export const HomePageTitles = styled.div`
 export const ProjectsSquare = styled.div`
     width: 20vh;
     height: 20vh;
-    background-color: #c4c0b5;
+    background-color: var(--block);
 `;
 
 export const ProjectsCircle = styled.div`
     width: 20vh;
     height: 20vh;
     border-radius: 50%;
-    background-color: #c4c0b5;
+    background-color: var(--block);
     margin-left: 15vw;
     margin-right: 2%;
 `;
@@ -101,15 +110,15 @@ export const ViewAllProjectsButton = styled.button`
     padding-bottom: 1%;
     margin-left: 9vw;
     margin-right: 2%;
-    color: white;
-    background-color: #E6E3DA;
-    color: #7B6C55;
+    background-color: var(--nav);
+    color: var(--brown);
     align-self: center;
-    border: 5px solid #7B6C55;
+    border: 5px solid var(--brown);
     border-radius: 20px;
     display: block;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease;
+
     &:active {
         transform: scale(0.97);
     }
@@ -157,13 +166,11 @@ export const HomeContainer = styled.div`
     padding-top: 0.5rem;
 `;
 
-
-
 export const HrTrimmed = styled.hr`
     max-width: 80%;
     border: none;
     height: 0.5vh;
-    background-color: #333;
+    background-color: var(--rule);
     margin: 0 auto;
 `;
 
@@ -173,7 +180,6 @@ export const HrTrimmed = styled.hr`
  * the stage, so the whole scene scales together on any screen size.
  *   $x, $y = top-left corner as % of stage width / height
  *   $w     = width as % of stage width
- * Text inside a stage can use cqw units (1cqw = 1% of the stage width).
  */
 export const Stage = styled.div`
     position: relative;
@@ -190,6 +196,16 @@ export const StageImg = styled.img`
     height: auto;
 `;
 
+/*
+ * Text inside a stage follows the same type scale as the rest of the site,
+ * but scaled with the stage. The base size 1.11cqw is 16px at the 1440px
+ * design width, so 1em = the b1 body size, and the sizes below are the scale
+ * from index.css expressed in em:
+ *   H1 60px = 3.75em    H2 40px = 2.5em    H3/H4 24px = 1.5em
+ *   b1 16px = 1em       b2 20px = 1.25em (add className="b2")
+ * !important is needed because index.css styles headings and paragraphs with
+ * a more specific selector (#root h1 ...), which would otherwise win.
+ */
 export const StageText = styled.div`
     position: absolute;
     left: ${p => p.$x}%;
@@ -198,29 +214,29 @@ export const StageText = styled.div`
     color: ${p => p.$color || "inherit"};
     text-align: ${p => p.$align || "inherit"};
     font-size: 1.11cqw;
-    /* The site has global rules that give p its own size, so force text
-       inside a stage to follow the stage's font size (em units) instead. */
-    p { font-size: 1em !important; line-height: 1.5 !important; margin: 0 0 1em !important; }
-    h1 { font-size: 2.5em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
-    h2 { font-size: 2em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
-    h3 { font-size: 1.75em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
-    h4 { font-size: 1.5em !important; line-height: 1.2 !important; margin: 0 0 0.5em !important; }
+
+    p { font-size: 1em !important; line-height: var(--lh-body) !important; margin: 0 0 1em !important; }
+    .b2 { font-size: 1.25em !important; }
+    h1 { font-size: 3.75em !important; line-height: var(--lh-heading) !important; margin: 0 0 0.5em !important; }
+    h2 { font-size: 2.5em !important; line-height: var(--lh-heading) !important; margin: 0 0 0.5em !important; }
+    h3 { font-size: 1.5em !important; line-height: var(--lh-heading) !important; margin: 0 0 0.5em !important; }
+    h4 { font-size: 1.5em !important; line-height: var(--lh-heading) !important; margin: 0 0 0.5em !important; }
     hr { margin: 1em 0 !important; }
     button { font-size: 1em; }
 `;
 
 
 export const FadeSection = ({ children }) => {
-const ref = useRef(null);
-const { scrollYProgress } = useScroll({
-target: ref,
-offset: ["start end", "start start", "end end", "end start"],
-});
-const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "start start", "end end", "end start"],
+    });
+    const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
 
-return (
-<motion.div ref={ref} style={{ opacity }}>
-{children}
-</motion.div>
-  );
+    return (
+        <motion.div ref={ref} style={{ opacity }}>
+            {children}
+        </motion.div>
+    );
 };

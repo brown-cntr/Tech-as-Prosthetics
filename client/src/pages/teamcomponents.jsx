@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 5vw;
-    row-gap: 10vh;
+    column-gap: 4rem;
+    row-gap: 5rem;
     margin: 5%;
     place-items: center;
 `;
@@ -19,9 +19,7 @@ export const Card = styled.div`
 `;
 
 export const CardName = styled.h5`
-    object-fit: cover;
-    object-position: 50% 50%;
-    margin-top: 10%;
+    margin-top: 16px;
 `;
 
 export const CardImage = styled.img`
@@ -96,27 +94,36 @@ export const Header = styled.div`
 
 export const TopText = styled.div`
     display: flex;
-    color: #635371;
     margin-top: 10%;
     margin-left: 5%;
     flex-direction: column;
 `;
 
-
-export const TopLeftText = styled.div`
-    font-size: 2vw;
+export const TopLeftText = styled.p`
     text-align: left;
+
+    #root & {
+        font-family: var(--heading);
+        font-size: var(--fs-h3);
+        color: var(--muted);
+    }
 `;
 
-export const TopRightText = styled.div`
-    font-size: 3vw;
+export const TopRightText = styled.h1`
     text-align: left;
+
+    #root & {
+        margin: 0;
+        color: var(--muted);
+    }
 `;
 
-export const OtherTopText = styled.div`
-    margin-top: 15%;
-    font-size: 1.2vw;
-    color: #000000;
+export const OtherTopText = styled.p`
     text-align: left;
-    margin-right: 5%;
+
+    #root & {
+        margin-top: 15%;
+        margin-right: 5%;
+        color: var(--text);
+    }
 `;

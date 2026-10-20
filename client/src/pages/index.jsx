@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
-import { MainTitle,
-    FadeSection,
+import React from 'react';
+import { FadeSection,
     LearnMoreButton,
     Stage,
     StageImg,
@@ -29,6 +28,9 @@ import fig19 from "../assets/Fig 19.svg";
  * text are placed with percentages of that box ($x, $y = top-left corner, $w =
  * width), so each section scales as one picture on any laptop/desktop screen.
  * The numbers were measured from the layout at 1440 x 757.
+ *
+ * Text sizes and colors are not set here: headings and paragraphs follow the
+ * type scale in index.css, and colors come from its var(--...) variables.
  */
 const Home = () => {
     const navigate = useNavigate();
@@ -48,28 +50,28 @@ const Home = () => {
                             <p>Discover the overlooked histories of disabled, women, and gender-marginalized innovators whose ideas shaped the technologies we use every day.</p>
                         </StageText>
                         <StageText $x={15} $y={81.1} $w={24.8}>
-                            <LearnMoreButton title="Learn More" aria-label="Learn more about this purple button"
+                            <LearnMoreButton title="Learn More"
                                 style={{ width: "100%" }}
                                 onClick={() => navigate("/about")}>
                                 Learn More
                             </LearnMoreButton>
                         </StageText>
-                        <StageText $x={55} $y={19} $w={25} $align="left">
-                            <p style={{ fontStyle: "italic" }}>Technology Shaped By Different Paths</p>
-                            <MainTitle style={{ fontSize: "3em" }}>Technologies and/as Prosthetics</MainTitle>
+                        <StageText $x={55} $y={17} $w={33} $align="left">
+                            <p className="b2" style={{ fontStyle: "italic" }}>Technology Shaped By Different Paths</p>
+                            <h1>Technologies and/as Prosthetics</h1>
                         </StageText>
                         <StageImg src={rightPeople} alt="decorative image 2" $x={45.8} $y={38} $w={54.2} />
                     </Stage>
                 </motion.div>
 
                 {/* Projects */}
-                <Stage $ratio="1440 / 908" style={{ marginTop: "2.6%", backgroundColor: "#E4D9B5" }}>
+                <Stage $ratio="1440 / 908" style={{ marginTop: "2.6%", backgroundColor: "var(--surface)" }}>
                     <StageImg src={oldComputer} alt="old computer" $x={0} $y={8.7} $w={45.7} />
                     <StageText $x={45} $y={10.8} $w={50} $align="left">
                         <h1>Experiences</h1>
                         <p>Explore interactive experiences that uncover the people, practices, and ideas that have shaped the technologies we use today.</p>
                     </StageText>
-                    <StageText $x={45} $y={27.5} $w={20}>
+                    <StageText $x={45} $y={28.5} $w={20}>
                         <LearnMoreButton title="View All Projects"
                             style={{ width: "100%", height: "5.26cqw" }}
                             onClick={() => navigate("/projects")}>
@@ -96,7 +98,7 @@ const Home = () => {
             <FadeSection>
                 {/* Our Mission */}
                 <Stage>
-                    <StageText $x={3.8} $y={6.2} $w={50} $align="left">
+                    <StageText $x={3.8} $y={4.5} $w={50} $align="left">
                         <h1>Our Mission</h1>
                         <p>The history of technology is often told through stories of singular inventors and breakthrough machines. But technologies are also shaped by people whose needs, ideas, labor, and ingenuity have been overlooked, including disabled people, women, and gender-marginalized people.</p>
                         <p>Technologies and/as Prosthetics reimagines these histories through interactive, accessible experiences. We ask what becomes possible when we change not only the stories we tell, but the ways we encounter them.</p>
@@ -121,7 +123,7 @@ const Home = () => {
                 <Stage>
                     <StageImg src={bigLeftLady} alt="" $x={-30} $y={21.5} $w={80} />
                     <StageText $x={35} $y={62} $w={30} $align="center">
-                        <h1 style={{ fontWeight: "bold" }}>Workshops</h1>
+                        <h1>Workshops</h1>
                         <h3>Building the project TOGETHER</h3>
                         <p>"Technologies and/as Prosthetics is not a project created in isolation. Throughout the 2026–2027 academic year, we are bringing together students, scholars, designers, technologists, and members of the greater Brown community to ask how hidden histories can be researched, interpreted, and experienced differently.</p>
                         <p>Across three interdisciplinary workshops, participants will move from discovery to connection to creation.</p>
@@ -138,10 +140,12 @@ const Home = () => {
                     <StageImg src={fig7}       alt="fig7"        $x={16}   $y={4}     $w={5.3} />
                     <StageImg src={fig19_2}    alt="fig19_2"     $x={28}   $y={15}    $w={10.7} />
                     <StageImg src={fig19}      alt="fig19"       $x={42}   $y={33}    $w={11.4} />
-                    <StageText $x={55} $y={33.3} $w={30} $color="white">
-                        <h1>Our Team</h1>
+                    {/* The hill picture is the same in light and dark mode, so the text on it is fixed too. */}
+                    <StageText $x={55} $y={33.3} $w={30} $color="#fff">
+                        <h1 style={{ color: "#fff" }}>Our Team</h1>
                         <p>Technologies and/as Prosthetics brings together scholars, students, designers, and technologists working across the humanities, social sciences,  computer science, and more.</p>
-                        <LearnMoreButton title="Meet the Team" style={{ margin: "0 auto", background: "#E4D9B5", color: "black", height: "5.3cqw" }}
+                        <LearnMoreButton title="Meet the Team"
+                            style={{ margin: "0 auto", background: "var(--sand)", height: "5.3cqw" }}
                             onClick={() => navigate("/team")}>
                             Meet the Team
                         </LearnMoreButton>
