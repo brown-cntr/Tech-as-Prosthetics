@@ -1,1 +1,0 @@
-import{n as e,t}from"./index-BopdO-75.js";e();var n=t(),r=()=>(0,n.jsx)(`iframe`,{src:`/khipu-game/index.html`,title:`Khipu Experience`,style:{width:`100%`,height:`100vh`,border:`none`,display:`block`}});export{r as default};
