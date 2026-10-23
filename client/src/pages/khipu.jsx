@@ -1,4 +1,4 @@
-import KhipuGame from "../components/khipu/KhipuGame.jsx";
+import KhipuGame from "../experiences/khipu/KhipuGame.jsx";
 
 const Khipu = () => <KhipuGame />;
 
