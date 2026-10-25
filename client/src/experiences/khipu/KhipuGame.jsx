@@ -23,10 +23,29 @@ import {
     VisuallyHidden,
 } from "./KhipuGameElements.jsx";
 
+import Tutorial from "../../components/Tutorial.jsx";
+import page1 from "../../assets/khipu-tutorial/page1.webp";
+import page2 from "../../assets/khipu-tutorial/page2.webp";
+import page3 from "../../assets/khipu-tutorial/page3.webp";
+import begin from "../../assets/khipu-tutorial/begin.png";
+import next from "../../assets/khipu-tutorial/next.png";
+import back from "../../assets/khipu-tutorial/back.png";
+import start from "../../assets/khipu-tutorial/start.png";
+
 const TARGET_NUMBER = 203;
 const EXERCISE_TEXT = `In this exercise, represent the number ${TARGET_NUMBER} on a khipu! Use only one cord.`;
 const MIN_WRAPS = 2;
 const MAX_WRAPS = 9;
+
+//for the tutorial
+const BUTTONS = { begin, next, back, start };
+
+//first tutorial block
+const PAGES = [
+    { src: page1, alt: "Page one text" },
+    { src: page2, alt: "Page two text" },
+    { src: page3, alt: "Page three text" },
+];
 
 const KNOT_TOOLS = {
     single: { label: "Single knot", hotspotX: 55 },
@@ -169,7 +188,8 @@ const KhipuGame = () => {
             dialogReturnFocusRef.current?.focus();
         };
     }, [dialog]);
-
+    const [open, setOpen] = useState(true);
+    
     return (
         <GameSection aria-label="Khipu game">
             <StageViewport ref={viewportRef}>
@@ -179,6 +199,13 @@ const KhipuGame = () => {
                             ref={canvasHostRef}
                             role="img"
                             aria-label={`Khipu with ${cordCount} ${cordCount === 1 ? "cord" : "cords"} and ${history.length - cordCount} knots`}
+                        />
+                        <Tutorial
+                            open={open}
+                            onClose={() => setOpen(false)}
+                            pages={PAGES}
+                            buttons={BUTTONS}
+                            label="Test tutorial"
                         />
 
                         <ImageButton
