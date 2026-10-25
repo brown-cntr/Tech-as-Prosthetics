@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const GameSection = styled.section`
     box-sizing: border-box;
     height: 100vh;
-    padding-top: 80px;
     background: var(--page);
     display: flex;
     align-items: center;
