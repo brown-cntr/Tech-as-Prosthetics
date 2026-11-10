@@ -33,6 +33,8 @@ import {
     Dialog,
     CloseButton,
     VisuallyHidden,
+    ScreenshotPanel,
+    PanelCloseButton,
 } from "./KhipuGameElements.jsx";
 import ExerciseLog from "./ExerciseLog.jsx";
 
@@ -77,6 +79,7 @@ function knotFor(tool, wraps) {
     return { textureFile: "base10texture.png", value: 1 };
 }
 
+
 const KhipuGame = () => {
     const navigate = useNavigate();
     const viewportRef = useRef(null);
@@ -95,6 +98,7 @@ const KhipuGame = () => {
     const [logPage, setLogPage] = useState(0);
     const [selectedCord, setSelectedCord] = useState(-1);
     const [open, setOpen] = useState(true);
+    const [screenshot, setScreenshot] = useState(null);
 
     const count = history.reduce((sum, action) => sum + (action.value ?? 0), 0);
     const cordCount = history.filter((action) => action.type === "cord").length;
@@ -202,7 +206,7 @@ const KhipuGame = () => {
         setMessage(null);
     };
 
-    const checkAnswer = () => {
+    const checkAnswer = async (event) => {
         if (count === TARGET_NUMBER) {
             setMessage({ tone: "correct", text: "Correct, good job!" });
         } else if (count > TARGET_NUMBER) {
@@ -210,6 +214,11 @@ const KhipuGame = () => {
         } else {
             setMessage({ tone: "info", text: `Not quite yet: your khipu shows ${count}. Keep adding knots.` });
         }
+        const scene = sceneRef.current;
+        if (!scene) return;
+        dialogReturnFocusRef.current = event.currentTarget;
+        setScreenshot(await scene.snapshot());
+        setDialog("shot");
     };
 
     const openDialog = (name, event) => {
@@ -397,8 +406,16 @@ const KhipuGame = () => {
                             onPageChange={setLogPage}
                             onClose={closeDialog}
                         />
-
-                        {dialog && dialog !== "log" && (
+                        {dialog === "shot" && screenshot && (
+                            <Overlay onClick={closeDialog}>
+                                <ScreenshotPanel role="dialog" aria-modal="true" aria-label="Your khipu" onClick={(e) => e.stopPropagation()}>
+                                    <img src={screenshot} alt={`Your khipu showing ${count}`} />
+                                    {message && <p>{message.text}</p>}
+                                    <PanelCloseButton ref={closeButtonRef} type="button" onClick={closeDialog}>Close</PanelCloseButton>
+                                </ScreenshotPanel>
+                            </Overlay>
+                        )}
+                        {dialog && dialog !== "log" && dialog !== "shot" && (
                             <Overlay onClick={closeDialog}>
                                 <Dialog
                                     role="dialog"

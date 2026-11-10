@@ -227,3 +227,43 @@ export const VisuallyHidden = styled.span`
     clip: rect(0 0 0 0);
     white-space: nowrap;
 `;
+
+export const ScreenshotPanel = styled.div`
+    position: absolute;
+    left: 240px;
+    top: 70px;
+    width: 800px;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f7f5ea;
+    border: 3px solid #7b6c55;
+    border-radius: 12px;
+    text-align: center;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+
+    p {
+        margin: 12px 0;
+        font-size: 16px;
+    }
+`;
+
+export const PanelCloseButton = styled.button`
+    padding: 8px 24px;
+    border: 2px solid #7b6c55;
+    border-radius: 8px;
+    background: #e4d9b5;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 3px solid #635371;
+        outline-offset: 2px;
+    }
+`;

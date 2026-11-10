@@ -225,6 +225,10 @@ export async function createKhipuScene(host, { onKhipuPointerDown }) {
             return selectedCord;
         },
 
+        snapshot() {
+            return app.renderer.extract.base64({ target: app.stage, format: "webp", quality: 0.8 });
+        },
+
         addKnot(textureFile, x, y) {
             const knot = new Sprite(texture(textureFile));
             knot.anchor.set(0.5);
