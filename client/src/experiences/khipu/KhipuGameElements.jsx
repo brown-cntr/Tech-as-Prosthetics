@@ -81,10 +81,44 @@ export const ExerciseText = styled.p`
 
 export const Count = styled.p`
     position: absolute;
-    left: 1000px;
-    top: 40px;
+    left: ${({ $left }) => $left}px;
+    top: ${({ $top }) => $top}px;
+    transform: translate(-50%, 0);
     margin: 0;
-    font-size: 20px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: rgba(247, 245, 234, 0.92);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #64411b;
+    pointer-events: none;
+    z-index: 2;
+
+    strong {
+        font-weight: 700;
+        color: #b42318;
+    }
+`;
+
+/** Labels for place-value boxes (fills are drawn in Pixi under the cord). */
+export const PlaceBoxLabel = styled.span`
+    position: absolute;
+    left: ${({ $left }) => $left}px;
+    top: ${({ $top }) => $top}px;
+    max-width: 78px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: ${({ $tone }) => ($tone === "ones" ? "#7a3a32" : "#5a4a3a")};
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1.2;
 `;
 
 export const Feedback = styled.p`
