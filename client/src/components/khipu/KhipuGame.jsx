@@ -1,6 +1,17 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ASSET_BASE, MAX_CORDS, STAGE_HEIGHT, STAGE_WIDTH, createKhipuScene } from "./khipuScene.js";
+import {
+    ASSET_BASE,
+    MAX_CORDS,
+    SCENE_LAYOUT_REV,
+    STAGE_HEIGHT,
+    STAGE_WIDTH,
+    cordCenterX,
+    cordCountAnchor,
+    createKhipuScene,
+    resolveKnotPlacement,
+    zonesForCord,
+} from "./khipuScene.js";
 import {
     GameSection,
     StageViewport,
@@ -12,6 +23,7 @@ import {
     HotspotButton,
     ExerciseText,
     Count,
+    PlaceBoxLabel,
     Feedback,
     ProgressList,
     DigitMenu,
@@ -22,6 +34,7 @@ import {
     CloseButton,
     VisuallyHidden,
 } from "./KhipuGameElements.jsx";
+import ExerciseLog from "./ExerciseLog.jsx";
 
 const TARGET_NUMBER = 203;
 const EXERCISE_TEXT = `In this exercise, represent the number ${TARGET_NUMBER} on a khipu! Use only one cord.`;
@@ -38,12 +51,6 @@ const KNOT_BANK = { x: 440, y: 465 };
 const PROGRESS_STEPS = ["I.  Observe", "II.  Practice", "III.  Design", "IV.  Interpret"];
 
 const asset = (file) => ASSET_BASE + file;
-
-function placeValueAt(y) {
-    if (y < 200) return 100;
-    if (y < 300) return 10;
-    return 1;
-}
 
 function knotFor(tool, wraps) {
     if (tool === "long") return { textureFile: `${wraps}digit.png`, value: wraps };
@@ -66,6 +73,8 @@ const KhipuGame = () => {
     const [history, setHistory] = useState([]);
     const [message, setMessage] = useState(null);
     const [dialog, setDialog] = useState(null);
+    const [logPage, setLogPage] = useState(0);
+    const [selectedCord, setSelectedCord] = useState(-1);
 
     const count = history.reduce((sum, action) => sum + (action.value ?? 0), 0);
     const cordCount = history.filter((action) => action.type === "cord").length;
@@ -100,7 +109,7 @@ const KhipuGame = () => {
             scene?.destroy();
             sceneRef.current = null;
         };
-    }, []);
+    }, [SCENE_LAYOUT_REV]);
 
     const placeKnot = (x, y) => {
         const scene = sceneRef.current;
@@ -109,9 +118,38 @@ const KhipuGame = () => {
             setMessage({ tone: "info", text: "Pick a knot from the knot bank first." });
             return;
         }
+
+        const placement = resolveKnotPlacement(x, y, cordCount);
+        if (!placement.ok) {
+            if (placement.reason === "cord") {
+                setMessage({ tone: "info", text: "Add a cord first, then place knots on it." });
+            } else {
+                setMessage({
+                    tone: "info",
+                    text: "Place the knot inside the Hundreds, Tens, or Ones box.",
+                });
+            }
+            return;
+        }
+
+        let nearest = 0;
+        let nearestDist = Infinity;
+        for (let i = 0; i < cordCount; i += 1) {
+            const dist = Math.abs(placement.x - cordCenterX(i));
+            if (dist < nearestDist) {
+                nearestDist = dist;
+                nearest = i;
+            }
+        }
+        scene.selectCord(nearest);
+        setSelectedCord(nearest);
+
         const { textureFile, value } = knotFor(tool, wraps);
-        const id = scene.addKnot(textureFile, x, y);
-        setHistory((previous) => [...previous, { type: "knot", id, value: value * placeValueAt(y) }]);
+        const id = scene.addKnot(textureFile, placement.x, placement.y);
+        setHistory((previous) => [
+            ...previous,
+            { type: "knot", id, value: value * placement.placeValue },
+        ]);
         setMessage(null);
     };
 
@@ -127,6 +165,7 @@ const KhipuGame = () => {
             return;
         }
         setHistory((previous) => [...previous, { type: "cord" }]);
+        setSelectedCord(scene.getSelectedCord());
         setMessage(null);
     };
 
@@ -135,7 +174,10 @@ const KhipuGame = () => {
         const last = history[history.length - 1];
         if (!scene || !last) return;
         if (last.type === "knot") scene.removeKnot(last.id);
-        else scene.removeLastCord();
+        else {
+            scene.removeLastCord();
+            setSelectedCord(scene.getSelectedCord());
+        }
         setHistory(history.slice(0, -1));
         setMessage(null);
     };
@@ -152,6 +194,7 @@ const KhipuGame = () => {
 
     const openDialog = (name, event) => {
         dialogReturnFocusRef.current = event.currentTarget;
+        if (name === "log") setLogPage(0);
         setDialog(name);
     };
 
@@ -204,7 +247,29 @@ const KhipuGame = () => {
                             <ExerciseText>{EXERCISE_TEXT}</ExerciseText>
                         </Placed>
 
-                        <Count aria-live="polite">Count: {count}</Count>
+                        {Array.from({ length: cordCount }, (_, cordIndex) =>
+                            zonesForCord(cordIndex, cordCount).map((zone) => (
+                                <PlaceBoxLabel
+                                    key={`${cordIndex}-${zone.id}`}
+                                    aria-hidden="true"
+                                    $tone={zone.id}
+                                    $left={zone.x + 6}
+                                    $top={zone.y + 6}
+                                >
+                                    {zone.label}
+                                </PlaceBoxLabel>
+                            )),
+                        )}
+
+                        {cordCount > 0 && selectedCord >= 0 && (
+                            <Count
+                                aria-live="polite"
+                                $left={cordCountAnchor(selectedCord).left}
+                                $top={cordCountAnchor(selectedCord).top}
+                            >
+                                Count: <strong>{count}</strong>
+                            </Count>
+                        )}
 
                         {message && (
                             <Feedback $tone={message.tone} role="status">
@@ -221,6 +286,13 @@ const KhipuGame = () => {
                             aria-haspopup="dialog"
                             onClick={(event) => openDialog("guide", event)}
                             style={{ left: 1175, top: 40, width: 50, height: 50 }}
+                        />
+                        <ImageButton
+                            type="button"
+                            aria-label="Open the exercise log"
+                            aria-haspopup="dialog"
+                            onClick={(event) => openDialog("log", event)}
+                            style={{ left: 1175, top: 115, width: 50, height: 55 }}
                         />
                         <ImageButton
                             type="button"
@@ -292,7 +364,14 @@ const KhipuGame = () => {
                             <img src={asset("checkAnswer.png")} alt="" />
                         </ImageButton>
 
-                        {dialog && (
+                        <ExerciseLog
+                            open={dialog === "log"}
+                            pageIndex={logPage}
+                            onPageChange={setLogPage}
+                            onClose={closeDialog}
+                        />
+
+                        {dialog && dialog !== "log" && (
                             <Overlay onClick={closeDialog}>
                                 <Dialog
                                     role="dialog"
